@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link, useHistory } from "react-router-dom";
 
 //STYLING
 import Typography from "@material-ui/core/Typography";
@@ -59,7 +60,6 @@ const formSubmit = e => {
 									type="text"
 									onChange={changeHandler}
 									name="username"
-									value={null}
 									value={formState.username}
 									className={classes.loginFormInput}
 								/>
@@ -84,6 +84,21 @@ const formSubmit = e => {
 						>
 							LOG IN
 						</Button>
+					</Grid>
+					<Grid container className={classes.signUpButtonItem}>
+						<Grid item>
+							<Typography variant="h6" className={classes.dontHaveAnAccountText}>
+								Dont have an account?{" "}
+								<Button
+                className={classes.signUpButtonOnLogInPage}
+									variant="contained"
+									color="secondary"
+									//onClick={history.push("/signup")}
+								>
+									Sign Up
+								</Button>
+							</Typography>
+						</Grid>
 					</Grid>
 				</Paper>
 			</Grid>
