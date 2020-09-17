@@ -1,16 +1,16 @@
 import { makeStyles } from "@material-ui/core/styles";
-import { createMuiTheme } from "@material-ui/core/styles";
+//import { createMuiTheme } from "@material-ui/core/styles";
 
-const theme = createMuiTheme({
-	breakpoints: {
-		values: {
-			iPhone: 480,
-			tablet: 640,
-			laptop: 1024,
-			desktop: 1280,
-		},
-	},
-});
+// const theme = createMuiTheme({
+// 	breakpoints: {
+// 		values: {
+// 			iPhone: 480,
+// 			tablet: 640,
+// 			laptop: 1024,
+// 			desktop: 1280,
+// 		},
+// 	},
+// });
 
 export const useStyles = makeStyles((theme) => ({
 	loginFormContainer: {
