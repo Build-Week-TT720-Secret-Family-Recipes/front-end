@@ -1,9 +1,8 @@
 import React from "react";
-import Login from "./logIn";
+import Login from './LogIn'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Dashboard from './dashboard'
-import PrivateRoute from './privateRoute'
-
+import Dashboard from "./dashboard";
+import PrivateRoute from "./privateRoute";
 
 function App() {
 	return (
@@ -14,7 +13,6 @@ function App() {
 					<Route exact path="/">
 						<Login />
 					</Route>
-				
 				</Switch>
 			</div>
 		</Router>

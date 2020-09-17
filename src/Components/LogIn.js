@@ -7,7 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
-import { useStyles } from "../styles/styles";
+import { useStyles } from "../styles/Styles";
 
 //CRUD
 //import axios from "axios";
