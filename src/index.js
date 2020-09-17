@@ -4,7 +4,8 @@ import { Provider } from "react-redux";
 import logger from "redux-logger";
 import thunk from "redux-thunk";
 import { applyMiddleware, compose, createStore } from "redux";
-import App from './components/app'
+import App from './components/App'
+
 
 const enhancer = compose(applyMiddleware(thunk, logger));
 
