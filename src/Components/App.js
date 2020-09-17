@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Dashboard from './dashboard'
 import PrivateRoute from './privateRoute'
 
+
 function App() {
 	return (
 		<Router>
@@ -13,6 +14,7 @@ function App() {
 					<Route exact path="/">
 						<Login />
 					</Route>
+				
 				</Switch>
 			</div>
 		</Router>
