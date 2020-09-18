@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
 function Register(props) {
   const [user, setUser] = useState({});
@@ -9,9 +10,14 @@ function Register(props) {
 
   const onSubmit = (data) => {
     console.log(data);
-    setUser({
-      data
-    });
+   axios
+   .post("")
+   .then((res) => {
+       console.log(res)
+   })
+   .catch((err) => {
+       console.log(err)
+   })
   };
 
   return (
