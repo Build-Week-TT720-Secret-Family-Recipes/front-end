@@ -3,7 +3,8 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Dashboard from "./Dashboard";
 import PrivateRoute from "./privateRoute";
-import Login from "./Login"
+//import Login from "./Login"
+import CreateRecipe from "./CreateRecipe"
 
 function App() {
 	return (
@@ -12,7 +13,7 @@ function App() {
 				<Switch>
 					<PrivateRoute exact path="/protected" component={Dashboard} />
 					<Route exact path="/">
-						<Login />
+						<CreateRecipe />
 					</Route>
 				</Switch>
 			</div>

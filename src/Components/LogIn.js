@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
 import { useForm } from 'react-hook-form'
 
@@ -11,7 +11,7 @@ import { useStyles } from "../Styles/Styles";
 import TextField from '@material-ui/core/TextField'
 
 //CRUD
-//import axios from "axios";
+import axios from "axios";
 
 
 function Login() {
@@ -26,17 +26,16 @@ function Login() {
 	//HANDLERS
 
     const formSubmit = (data) => {
-        console.log(data)
-        // axios
-        // 	.post("", formState)
-        // 	.then((res) => {
-        // 		console.log("login response:", data);
-        // 		localStorage.setItem("token", res.data.token);
-        // 		push("/protected");
-        // 	})
-        // 	.catch((err) => {
-        // 		console.log(err);
-        // 	});
+        axios
+        	.post("", data)
+        	.then((res) => {
+        		console.log("login response:", data);
+        		localStorage.setItem("token", res.data.token);
+        		push("/protected");
+        	})
+        	.catch((err) => {
+        		console.log(err);
+        	});
     };
 
     return (
