@@ -3,10 +3,15 @@ import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
 function Register(props) {
+  const [user, setUser] = useState({});
+
   const { register, handleSubmit, errors } = useForm();
 
   const onSubmit = (data) => {
     console.log(data);
+    setUser({
+      data
+    });
   };
 
   return (
