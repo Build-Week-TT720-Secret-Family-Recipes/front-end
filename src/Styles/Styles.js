@@ -57,8 +57,12 @@ export const useStyles = makeStyles((theme) => ({
 		width: "100%",
 		height: "100%",
 	},
+	tempHeader: {
+		
+	},
 	createRecipeDescription: {
 		backgroundImage: `url(${createRecipesDescription})`,
+		margin: "20px",
 		backgroundSize: "cover",
 		borderRadius: "50px",
 		width: "50%",
@@ -88,5 +92,13 @@ export const useStyles = makeStyles((theme) => ({
 		flexDirection: "column",
 		justifyContent: "center",
 		alignItems: "center",
+	},
+	descFormInput: {
+		margin: "30px",
+		width: "800px",
+	},
+	descSubmit: {
+
+
 	},
 }));

@@ -1,12 +1,12 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
 //COMPONENT IMPORTS
-import CreateRecipeDesc from './createRecipeDesc'
-import CreateRecipeIngredients from './createRecipeIngedients'
-import CreateRecipeInstructions from './createRecipeInstructions'
-import CreateRecipeAdtnl from './createRecipeAdtnl'
+import CreateRecipeDesc from "./createRecipeDesc";
+import CreateRecipeIngredients from "./createRecipeIngedients";
+import CreateRecipeInstructions from "./createRecipeInstructions";
+import CreateRecipeAdtnl from "./createRecipeAdtnl";
 
 //STYLING
 import Typography from "@material-ui/core/Typography";
@@ -22,21 +22,23 @@ import { gsap } from "gsap";
 //CRUD
 //import axios from "axios";
 
-
 function CreateRecipe() {
-    //STATE
-    const [temporaryState, setTemporaryState] = useState({
-			createDisplay: false,
-			descDisplay: true,
-			ingDisplay: false,
-			stepsDisplay: false,
-			addDisplay: false,
-		});
+	//STATE
+	const [temporaryState, setTemporaryState] = useState({
+		createDisplay: true,
+		descDisplay: false,
+		ingDisplay: false,
+		stepsDisplay: false,
+		addDisplay: false,
+	});
 	//STYLING
-    const classes = useStyles();
+	const classes = useStyles();
 
 	return temporaryState.createDisplay ? (
 		<Grid container className={classes.createRecipeContainer}>
+			<Grid item classname={classes.tempHeader}>
+				Add a recipe
+			</Grid>
 			<Grid
 				item
 				className={classes.createRecipeDescription}
