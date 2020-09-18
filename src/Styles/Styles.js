@@ -58,7 +58,7 @@ export const useStyles = makeStyles((theme) => ({
 		height: "100%",
 	},
 	tempHeader: {
-		
+		border: "2px solid red",
 	},
 	createRecipeDescription: {
 		backgroundImage: `url(${createRecipesDescription})`,
@@ -67,7 +67,6 @@ export const useStyles = makeStyles((theme) => ({
 		borderRadius: "50px",
 		width: "50%",
 		height: "250px",
-		border: "4px solid black",
 	},
 	createRecipeDescriptionText: {
 		height: "100%",
@@ -97,8 +96,13 @@ export const useStyles = makeStyles((theme) => ({
 		margin: "30px",
 		width: "800px",
 	},
-	descSubmit: {
-
-
+	descSubmit: {},
+	recipeStepsFormItem: {
+		width: "70vw",
+		border: "5px solid red",
+		display: "flex",
+		flexDirection: "column",
+		justifyContent: "center",
+		alignItems: "center",
 	},
 }));
