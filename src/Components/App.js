@@ -11,12 +11,12 @@ function App() {
 	return (
 		<Router>
 			<div>
-				<Route path="/register" component={Register} />
+				
 				<Switch>
 					<PrivateRoute exact path="/protected" component={Dashboard} />
-					<Route exact path="/">
-						<Login />
-					</Route>
+					<Route path="/login" component={Login} />
+					<Route path="/register" component={Register} />
+						
 				</Switch>
 			</div>
 		</Router>
