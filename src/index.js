@@ -7,6 +7,7 @@ import { applyMiddleware, compose, createStore } from "redux";
 import App from './Components/App';
 
 
+
 const enhancer = compose(applyMiddleware(thunk, logger));
 
 const store = createStore(enhancer);
