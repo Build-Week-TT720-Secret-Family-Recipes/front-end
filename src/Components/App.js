@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Dashboard from "./Dashboard";
 import PrivateRoute from "./privateRoute";
 //import Login from "./Login"
-import CreateRecipe from "./CreateRecipe"
+import CreateRecipe from "./createRecipeForm/createRecipeParent"
 
 function App() {
 	return (

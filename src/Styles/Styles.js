@@ -1,18 +1,8 @@
 import { makeStyles } from "@material-ui/core/styles";
-//import { createMuiTheme } from "@material-ui/core/styles";
-
-// const theme = createMuiTheme({
-// 	breakpoints: {
-// 		values: {
-// 			iPhone: 480,
-// 			tablet: 640,
-// 			laptop: 1024,
-// 			desktop: 1280,
-// 		},
-// 	},
-// });
+import createRecipesDescription from "./assets/createRecipesDescription.jpg";
 
 export const useStyles = makeStyles((theme) => ({
+	//LOGIN FORM
 	loginFormContainer: {
 		display: "flex",
 		flexDirection: "column",
@@ -57,5 +47,46 @@ export const useStyles = makeStyles((theme) => ({
 	},
 	signUpButtonItem: {
 		padding: "25px",
+	},
+	//CREATE RECIPE PARENT
+	createRecipeContainer: {
+		display: "flex",
+		flexDirection: "column",
+		justifyContent: "center",
+		alignItems: "center",
+		width: "100%",
+		height: "100%",
+	},
+	createRecipeDescription: {
+		backgroundImage: `url(${createRecipesDescription})`,
+		backgroundSize: "cover",
+		borderRadius: "50px",
+		width: "50%",
+		height: "250px",
+		border: "4px solid black",
+	},
+	createRecipeDescriptionText: {
+		height: "100%",
+		marginTop: "20px",
+		fontSize: "2vw",
+		color: "blue",
+		display: "flex",
+		flexDirection: "column",
+		justifyContent: "top",
+		alignItems: "center",
+	},
+	//CREATE RECIPE CHILD - DESCRIPTION
+	recipeDescriptionFormContainer: {
+		width: "98vw",
+		height: "98vh",
+		border: "5px solid gold",
+	},
+	recipeDescriptionFormItem: {
+		width: "60vw",
+		border: "5px solid red",
+		display: "flex",
+		flexDirection: "column",
+		justifyContent: "center",
+		alignItems: "center",
 	},
 }));
