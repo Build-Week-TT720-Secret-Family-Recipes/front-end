@@ -82,21 +82,23 @@ export const useStyles = makeStyles((theme) => ({
 	recipeDescriptionFormContainer: {
 		width: "98vw",
 		height: "98vh",
-		border: "5px solid gold",
+		// border: "5px solid gold",
 	},
 	recipeDescriptionFormItem: {
 		width: "60vw",
-		border: "5px solid red",
+		// border: "5px solid red",
 		display: "flex",
 		flexDirection: "column",
 		justifyContent: "center",
 		alignItems: "center",
 	},
 	descFormInput: {
-		margin: "30px",
-		width: "800px",
+		width: "60vw",
 	},
-	descSubmit: {},
+	descSubmit: {
+		margin: "20px",
+	},
+	//RECIPE STEPS
 	recipeStepsFormItem: {
 		width: "70vw",
 		border: "5px solid red",

@@ -2,6 +2,8 @@ import React, {useEffect} from "react";
 import { useHistory } from "react-router-dom";
 import { useForm } from 'react-hook-form'
 
+//REDUX
+
 //STYLING
 import Typography from "@material-ui/core/Typography";
 import FormGroup from "@material-ui/core/FormGroup";
@@ -13,7 +15,6 @@ import Paper from "@material-ui/core/Paper";
 import { useStyles } from "/Users/quietcalmrecords/School/Unit3/BUILDWEEK 3/front-end/src/Styles/Styles.js";
 import TextField from '@material-ui/core/TextField'
 import { gsap } from 'gsap'
-import apple_pie from "/Users/quietcalmrecords/School/Unit3/BUILDWEEK 3/front-end/src/Styles/assets/apple_pie.jpg";
 
 //CRUD
 //import axios from "axios";
@@ -105,7 +106,7 @@ function CreateRecipeDesc(props) {
 							variant="contained"
 							color="secondary"
 							onClick={null}
-							className={classes.loginButton}
+							className={classes.descSubmit}
 						>
 							ADD RECIPE DESCRIPTION
 						</Button>
