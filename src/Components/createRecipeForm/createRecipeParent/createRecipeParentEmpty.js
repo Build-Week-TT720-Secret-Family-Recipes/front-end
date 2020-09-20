@@ -37,7 +37,7 @@ function CreateRecipe({
 
 	return temporaryState.createDisplay ? (
 		<Grid container className={classes.createRecipeContainer}>
-			<Grid container>
+			<Grid container className={classes.recipe}>
 				<Grid item>
 					<CreateRecipeParentWithDesc />
 				</Grid>
@@ -47,7 +47,7 @@ function CreateRecipe({
 				className={
 					describePopulated
 						? classes.hideEl
-						: classes.accessCatagorySpecificFormContainerLeft
+						: classes.accessCatagorySpecificFormContainer
 				}
 				onClick={() =>
 					setTemporaryState({
@@ -57,19 +57,8 @@ function CreateRecipe({
 					})
 				}
 			>
-				<Grid
-					item
-					className={classes.accessCatagorySpecificFormDescribe}
-				></Grid>
-				<Grid item className={classes.formInfo}>
-					<Typography className={classes.ul}>
-						Give your new recipe a name.
-						<br></br>
-						Record where you found it.
-						<br></br>
-						Be sure to notate important things to know before starting
-						<br></br>
-					</Typography>
+				<Grid item className={classes.accessCatagorySpecificFormDescribe}>
+					<Typography className={classes.ul}>INTRODUCTION</Typography>
 				</Grid>
 			</Grid>
 			<Grid
@@ -77,7 +66,7 @@ function CreateRecipe({
 				className={
 					ingredientsPopulated
 						? classes.hideEl
-						: classes.accessCatagorySpecificFormContainerRight
+						: classes.accessCatagorySpecificFormContainer1
 				}
 				onClick={() =>
 					setTemporaryState({
@@ -88,22 +77,15 @@ function CreateRecipe({
 				}
 			>
 				<Grid item className={classes.accessCatagorySpecificFormIngredients}>
-
-				</Grid>
-				<Grid item className={classes.formInfo}>
-					<Typography className={classes.ul}>
-						temporaryState
-						<br></br>
-						test
-					</Typography>
+					<Typography className={classes.ul}>ADD INGREDIENTS</Typography>
 				</Grid>
 			</Grid>
-			<Grid
+			<Paper
 				container
 				className={
 					stepsPopulated
 						? classes.hideEl
-						: classes.accessCatagorySpecificFormContainerLeft
+						: classes.accessCatagorySpecificFormContainer2
 				}
 				onClick={() =>
 					setTemporaryState({
@@ -114,22 +96,15 @@ function CreateRecipe({
 				}
 			>
 				<Grid item className={classes.accessCatagorySpecificFormDefineSteps}>
-
+					<Typography className={classes.ul}>ADD STEPS</Typography>
 				</Grid>
-				<Grid item className={classes.formInfo}>
-					<Typography className={classes.ul}>
-						temporaryState
-						<br></br>
-						test
-					</Typography>
-				</Grid>
-			</Grid>
+			</Paper>
 			<Paper
 				container
 				className={
 					additionalInstructionsPopulated
 						? classes.hideEl
-						: classes.accessCatagorySpecificFormContainerRight
+						: classes.accessCatagorySpecificFormContainer3
 				}
 				onClick={() =>
 					setTemporaryState({
@@ -140,13 +115,8 @@ function CreateRecipe({
 				}
 			>
 				<Grid item className={classes.accessCatagorySpecificFormAdtnlInstr}>
-					
-				</Grid>
-				<Grid item className={classes.formInfo}>
 					<Typography className={classes.ul}>
-						temporaryState
-						<br></br>
-						test
+						ADDITIONAL INSTRUCTIONS
 					</Typography>
 				</Grid>
 			</Paper>

@@ -11,15 +11,19 @@ const CreateRecipeParentWithDesc = ({
 }) => {
 const classes = useStyles();
 	return recipeOrigin ? (
-		<div>
-			<h3>Recipe Information</h3>
-			<h4> Recipe Origin: {recipeOrigin}</h4>
-			<h4> Whats great about this recipe?: {recipePros}</h4>
-			<h4>
-				{" "}
-				What do you need to know before starting this Recipe?: {needToKnow}
-			</h4>
-		</div>
+		<Grid container className={classes.recipeFormPopulatedContainer}>
+			<Grid item className={classes.recipeFormPopulatedItem}>
+				<Typography className={classes.recipeFormPopulatedText}>
+					<h3>Recipe Information</h3>
+					<h4> Recipe Origin: {recipeOrigin}</h4>
+					<h4> Whats great about this recipe?: {recipePros}</h4>
+					<h4>
+						{" "}
+						What do you need to know before starting this Recipe?: {needToKnow}
+					</h4>
+				</Typography>
+			</Grid>
+		</Grid>
 	) : (
 		<Grid item className={classes.tempHeader}>
 			Add a recipe
