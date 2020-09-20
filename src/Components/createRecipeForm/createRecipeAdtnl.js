@@ -7,7 +7,8 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
-import { useStyles } from "/Users/quietcalmrecords/School/Unit3/BUILDWEEK 3/front-end/src/Styles/Styles.js";
+// import { useStyles } from "/Users/whitebear/Sean/Lambda/Lambda_assignments/unit3/front-end/src/Styles/Styles.js";
+import { useStyles } from "../../Styles/Styles"
 import TextField from '@material-ui/core/TextField'
 
 //CRUD

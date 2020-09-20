@@ -10,10 +10,10 @@ import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
-import { useStyles } from "/Users/quietcalmrecords/School/Unit3/BUILDWEEK 3/front-end/src/Styles/Styles.js";
+import { useStyles } from "../../Styles/Styles";
 import TextField from '@material-ui/core/TextField'
 import { gsap } from 'gsap'
-import apple_pie from "/Users/quietcalmrecords/School/Unit3/BUILDWEEK 3/front-end/src/Styles/assets/apple_pie.jpg";
+
 
 //CRUD
 //import axios from "axios";
