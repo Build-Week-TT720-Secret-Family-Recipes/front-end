@@ -25,7 +25,7 @@ import { gsap } from "gsap";
 function CreateRecipe() {
 	//STATE
 	const [temporaryState, setTemporaryState] = useState({
-		createDisplay: false,
+		createDisplay: true,
 		descDisplay: false,
 		ingDisplay: false,
 		stepsDisplay: true,

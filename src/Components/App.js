@@ -12,7 +12,7 @@ import PrivateRoute from "./privateRoute";
 //import Login from "./Login"
 import CreateRecipe from "./createRecipeForm/createRecipeParent";
 
-import WizardForm from "./WizardForm/WizardForm";
+import WizardForm from "./RecipeWizardForm/AddRecipeForm";
 
 function App() {
 	return (

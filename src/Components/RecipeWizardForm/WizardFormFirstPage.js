@@ -4,6 +4,7 @@ import { Field, reduxForm } from 'redux-form'
 import renderField from './renderField'
 
 const WizardFormFirstPage = props => {
+  console.log('wizzard form props: ', props);
   const { handleSubmit } = props
   return (
     <form onSubmit={handleSubmit}>
