@@ -13,9 +13,17 @@ import Grid from "@material-ui/core/Grid";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Button from "@material-ui/core/Button";
+<<<<<<< HEAD
 import { useStyles } from "../../Styles/Styles";
 import TextField from "@material-ui/core/TextField";
 import { gsap } from "gsap";
+=======
+import Paper from "@material-ui/core/Paper";
+import { useStyles } from "../../Styles/Styles";
+import TextField from '@material-ui/core/TextField'
+import { gsap } from 'gsap'
+
+>>>>>>> main
 
 //CRUD
 //import axios from "axios";

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 // import { useHistory } from "react-router-dom";
 // import { useForm } from "react-hook-form";
 
+<<<<<<< HEAD
 // //STYLING
 // import Typography from "@material-ui/core/Typography";
 // import FormGroup from "@material-ui/core/FormGroup";
@@ -12,6 +13,18 @@ import React, { useEffect } from "react";
 // import Paper from "@material-ui/core/Paper";
 //import { useStyles } from "../../Styles/Styles";
 // import TextField from "@material-ui/core/TextField";
+=======
+//STYLING
+import Typography from "@material-ui/core/Typography";
+import FormGroup from "@material-ui/core/FormGroup";
+import Grid from "@material-ui/core/Grid";
+import Checkbox from "@material-ui/core/Checkbox";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Button from "@material-ui/core/Button";
+import Paper from "@material-ui/core/Paper";
+import { useStyles } from "../../Styles/Styles";
+import TextField from "@material-ui/core/TextField";
+>>>>>>> main
 import { gsap } from "gsap";
 //CRUD
 //import axios from "axios";
