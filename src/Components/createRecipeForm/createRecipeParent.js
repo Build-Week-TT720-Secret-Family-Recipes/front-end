@@ -16,8 +16,7 @@ import Paper from "@material-ui/core/Paper";
 import { useStyles } from "../../Styles/Styles";
 import TextField from "@material-ui/core/TextField";
 
-//GSAP
-import { gsap } from "gsap";
+
 
 //CRUD
 //import axios from "axios";
@@ -28,7 +27,7 @@ function CreateRecipe() {
 		createDisplay: true,
 		descDisplay: false,
 		ingDisplay: false,
-		stepsDisplay: true,
+		stepsDisplay: false,
 		addDisplay: false,
 	});
 	//STYLING
