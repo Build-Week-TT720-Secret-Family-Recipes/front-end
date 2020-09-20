@@ -4,7 +4,7 @@ import createRecipesDescription from "./assets/createRecipesDescription.jpg";
 export const useStyles = makeStyles((theme) => ({
 	//GLOBAL
 	hideEl: {
-display: "none",
+		display: "none",
 	},
 	//LOGIN FORM
 	loginFormContainer: {
@@ -64,18 +64,70 @@ display: "none",
 	tempHeader: {
 		border: "2px solid red",
 	},
-	createRecipeDescription: {
+
+	accessCatagorySpecificFormContainerLeft: {
+		border: "2px solid blue",
+		display: "flex",
+		width: "50vw",
+	},
+
+	accessCatagorySpecificFormContainerRight: {
+		border: "2px solid green",
+		display: "flex",
+		flexDirection: "row-reverse",
+		width: "50vw",
+	},
+	ul: {
+		border: "2px solid red",
+		height: "250px",
+		width: "70%",
+		display: "flex",
+		flexDirection: "column",
+		justifyContent: "center",
+		alignContent: "center",
+	},
+	formInfo: {
+		display: "flex",
+		flexDirection: "column",
+		justifyItems: "center",
+		alignItems: "center",
+	},
+	accessCatagorySpecificFormDescribe: {
 		backgroundImage: `url(${createRecipesDescription})`,
-		margin: "20px",
+		margin: "60px",
 		backgroundSize: "cover",
 		borderRadius: "50px",
-		width: "50%",
-		height: "250px",
+		width: "20%",
+		height: "125px",
+	},
+	accessCatagorySpecificFormIngredients: {
+		backgroundImage: `url(${createRecipesDescription})`,
+		margin: "60px",
+		backgroundSize: "cover",
+		borderRadius: "50px",
+		width: "20%",
+		height: "125px",
+	},
+	accessCatagorySpecificFormDefineSteps: {
+		backgroundImage: `url(${createRecipesDescription})`,
+		margin: "60px",
+		backgroundSize: "cover",
+		borderRadius: "50px",
+		width: "20%",
+		height: "125px",
+	},
+	accessCatagorySpecificFormAdtnlInstr: {
+		backgroundImage: `url(${createRecipesDescription})`,
+		margin: "60px",
+		backgroundSize: "cover",
+		borderRadius: "50px",
+		width: "20%",
+		height: "125px",
 	},
 	createRecipeDescriptionText: {
 		height: "100%",
 		marginTop: "20px",
-		fontSize: "2vw",
+		fontSize: "1vw",
 		color: "blue",
 		display: "flex",
 		flexDirection: "column",

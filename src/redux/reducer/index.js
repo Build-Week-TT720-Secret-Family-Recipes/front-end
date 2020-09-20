@@ -12,7 +12,7 @@ export const initialState = {
 	stepsDisplay: false,
 	addDisplay: false,
 	//DESCRIBE THE RECIPE FORM
-	recipeOrigin: "",
+	recipeOrigin: false,
 	recipePros: "",
 	needToKnow: "",
 	prepTime: "",
