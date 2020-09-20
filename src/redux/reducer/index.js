@@ -1,11 +1,16 @@
-import { ADD_TO_STATE_DESCRIBE } from "./actions";
-import { ADD_TO_STATE_INGREDIENTS } from "ADD_TO_STATE_INGREDIENTS";
-import { ADD_TO_STATE_STEPS } from "ADD_TO_STATE_STEPS";
-import { ADD_TO_STATE_ADDITIONAL_INSTRUCTIONS } from
-	"ADD_TO_STATE_ADDITIONAL_INSTRUCTIONS";
-
+import { ADD_TO_STATE_DESCRIBE } from "../actions";
+import { ADD_TO_STATE_INGREDIENTS } from "../actions";
+import { ADD_TO_STATE_STEPS } from "../actions";
+import { ADD_TO_STATE_ADDITIONAL_INSTRUCTIONS } from "../actions";
+import { DISPLAY_FORM_ELEMENTS } from '../actions'
 
 export const initialState = {
+	//DISPLAY THE RECIPE FORM
+	createDisplay: true,
+	descDisplay: false,
+	ingDisplay: false,
+	stepsDisplay: false,
+	addDisplay: false,
 	//DESCRIBE THE RECIPE FORM
 	recipeOrigin: "",
 	recipePros: "",
@@ -36,12 +41,20 @@ export const initialState = {
 	additionalInstructionsPopulated: false,
 };
 
-
+console.log(initialState)
 const dataReducer = (state = initialState, action) => {
 	switch (action.type) {
+        case DISPLAY_FORM_ELEMENTS:
+            return {
+            state: action.payload
+            
+            }
 		case ADD_TO_STATE_DESCRIBE:
 			return {
 				...state,
+				recipeOrigin: action.payload.where,
+				recipePros: action.payload.great,
+				needToKnow: action.payload.before,
 				describePopulated: true,
 			};
 		case ADD_TO_STATE_INGREDIENTS:

@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 
 //COMPONENT IMPORTS
-import CreateRecipeDesc from "./createRecipeDesc";
-import CreateRecipeIngredients from "./createRecipeIngedients";
-import CreateRecipeInstructions from "./createRecipeInstructions";
-import CreateRecipeAdtnl from "./createRecipeAdtnl";
-
+import CreateRecipeDesc from "../createRecipeDesc";
+import CreateRecipeIngredients from "../createRecipeIngedients";
+import CreateRecipeInstructions from "../createRecipeInstructions";
+import CreateRecipeAdtnl from "../createRecipeAdtnl";
+import CreateRecipeParentWithDesc from "./createRecipeParentWithDesc"
 //STYLING
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
@@ -22,13 +24,19 @@ import { gsap } from "gsap";
 //CRUD
 //import axios from "axios";
 
-function CreateRecipe() {
+function CreateRecipe({
+	stepsPopulated,
+	describePopulated,
+	ingredientsPopulated,
+	additionalInstructionsPopulated,
+}) {
 	//STATE
+	 
 	const [temporaryState, setTemporaryState] = useState({
-		createDisplay: false,
+		createDisplay: true,
 		descDisplay: false,
 		ingDisplay: false,
-		stepsDisplay: true,
+		stepsDisplay: false,
 		addDisplay: false,
 	});
 	//STYLING
@@ -36,12 +44,15 @@ function CreateRecipe() {
 
 	return temporaryState.createDisplay ? (
 		<Grid container className={classes.createRecipeContainer}>
-			<Grid item classname={classes.tempHeader}>
+			<CreateRecipeParentWithDesc />
+			<Grid item className={classes.tempHeader}>
 				Add a recipe
 			</Grid>
 			<Grid
 				item
-				className={classes.createRecipeDescription}
+				className={
+					describePopulated ? classes.hideEl : classes.createRecipeDescription
+				}
 				onClick={() =>
 					setTemporaryState({
 						...temporaryState,
@@ -54,9 +65,14 @@ function CreateRecipe() {
 					Categorize & describe your recipe here
 				</Typography>
 			</Grid>
+
 			<Grid
 				item
-				className={classes.createRecipeDescription}
+				className={
+					ingredientsPopulated
+						? classes.hideEl
+						: classes.createRecipeDescription
+				}
 				onClick={() =>
 					setTemporaryState({
 						...temporaryState,
@@ -71,7 +87,9 @@ function CreateRecipe() {
 			</Grid>
 			<Grid
 				item
-				className={classes.createRecipeDescription}
+				className={
+					stepsPopulated ? classes.createRecipeDescription : classes.hideEl
+				}
 				onClick={() =>
 					setTemporaryState({
 						...temporaryState,
@@ -86,7 +104,11 @@ function CreateRecipe() {
 			</Grid>
 			<Grid
 				item
-				className={classes.createRecipeDescription}
+				className={
+					additionalInstructionsPopulated
+						? classes.hideEl
+						: classes.createRecipeDescription
+				}
 				onClick={() =>
 					setTemporaryState({
 						...temporaryState,
@@ -101,7 +123,15 @@ function CreateRecipe() {
 			</Grid>
 		</Grid>
 	) : temporaryState.descDisplay ? (
-		<CreateRecipeDesc />
+		<CreateRecipeDesc
+			display={() =>
+				setTemporaryState({
+					...temporaryState,
+					createDisplay: true,
+					descDisplay: false,
+				})
+			}
+		/>
 	) : temporaryState.ingDisplay ? (
 		<CreateRecipeIngredients />
 	) : temporaryState.stepsDisplay ? (
@@ -112,5 +142,13 @@ function CreateRecipe() {
 		<div>ERROR</div>
 	);
 }
+const mapStateToProps = (state) => {
+	return state;
+};
 
-export default CreateRecipe;
+const mapDispatchToProps = {
+	
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CreateRecipe);
+

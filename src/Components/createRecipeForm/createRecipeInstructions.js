@@ -40,47 +40,9 @@ function CreateRecipeInstructions(props) {
 			);
 		});
     return (
-			<Grid container className={classes.recipeDescriptionFormContainer}>
-				<Grid item ref={expand} className={classes.recipeStepsFormItem}>
-					<Typography variant="h2" className={classes.loginHeader}>
-						Add the steps to cook the recipe here
-					</Typography>
-					<br></br>
-					
-					<br></br>
-					<Typography variant="h2" className={classes.loginHeader}>
-						Recipe Description
-					</Typography>
-					<TextField
-						placeholder="Where did you get this recipe from?"
-						type="text"
-						name="where"
-						className={classes.descFormInput}
-					/>
-					<TextField
-						placeholder="Whats great about this recipe?"
-						type="text"
-						name="great"
-						className={classes.descFormInput}
-					/>
-					<TextField
-						placeholder="Before you begin, what do you need to know"
-						type="text"
-						name="great"
-						className={classes.descFormInput}
-					/>
-					<Grid item className={classes.descSubmit}>
-						<Button
-							variant="contained"
-							color="secondary"
-							onClick={null}
-							className={classes.loginButton}
-						>
-							ADD RECIPE DESCRIPTION
-						</Button>
-					</Grid>
-				</Grid>
-			</Grid>
+			<div>
+				
+			</div>
     )
 }
 

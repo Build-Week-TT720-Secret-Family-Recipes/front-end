@@ -1,6 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { useForm } from 'react-hook-form'
+import { useForm } from "react-hook-form";
+import { reduxForm, Field } from "redux-form";
 
 //STYLING
 import Typography from "@material-ui/core/Typography";
@@ -8,17 +9,31 @@ import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
 import { useStyles } from "/Users/quietcalmrecords/School/Unit3/BUILDWEEK 3/front-end/src/Styles/Styles.js";
-import TextField from '@material-ui/core/TextField'
+import TextField from "@material-ui/core/TextField";
 
 //CRUD
 //import axios from "axios";
 
-function CreateRecipeAdtnl(props) {
-    return (
-        <div>
-            
-        </div>
-    );
+const renderInputAddInfo = (props) => {
+    // <TextField {...props.input} type="text" />
+ return   <input {...props.input} type="text"/>
+};
+
+const onSubmit = values => {
+    alert(JSON.stringify(values))
 }
 
-export default CreateRecipeAdtnl;
+function CreateRecipeAdtnl({handleSubmit}) {
+	return (
+		<div>
+            <h2> Additional Info </h2>
+            <form onSubmit={handleSubmit}>
+                <Field name="additionaInfo" component={renderInputAddInfo} />
+                <button type ="submit">Submit</button>
+            </form>
+        </div>
+	);
+}
+
+export default reduxForm({
+    form: 'additionalInfo',})(CreateRecipeAdtnl);

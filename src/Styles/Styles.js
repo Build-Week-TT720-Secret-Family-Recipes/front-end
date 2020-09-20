@@ -2,6 +2,10 @@ import { makeStyles } from "@material-ui/core/styles";
 import createRecipesDescription from "./assets/createRecipesDescription.jpg";
 
 export const useStyles = makeStyles((theme) => ({
+	//GLOBAL
+	hideEl: {
+display: "none",
+	},
 	//LOGIN FORM
 	loginFormContainer: {
 		display: "flex",
