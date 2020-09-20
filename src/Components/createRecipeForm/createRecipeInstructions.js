@@ -1,7 +1,19 @@
 import React, { useEffect } from "react";
-import { useHistory } from "react-router-dom";
-import { useForm } from "react-hook-form";
+// import { useHistory } from "react-router-dom";
+// import { useForm } from "react-hook-form";
 
+<<<<<<< HEAD
+// //STYLING
+// import Typography from "@material-ui/core/Typography";
+// import FormGroup from "@material-ui/core/FormGroup";
+// import Grid from "@material-ui/core/Grid";
+// import Checkbox from "@material-ui/core/Checkbox";
+// import FormControlLabel from "@material-ui/core/FormControlLabel";
+// import Button from "@material-ui/core/Button";
+// import Paper from "@material-ui/core/Paper";
+//import { useStyles } from "../../Styles/Styles";
+// import TextField from "@material-ui/core/TextField";
+=======
 //STYLING
 import Typography from "@material-ui/core/Typography";
 import FormGroup from "@material-ui/core/FormGroup";
@@ -12,13 +24,14 @@ import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
 import { useStyles } from "../../Styles/Styles";
 import TextField from "@material-ui/core/TextField";
+>>>>>>> main
 import { gsap } from "gsap";
 //CRUD
 //import axios from "axios";
 
 
 function CreateRecipeInstructions(props) {
-      const classes = useStyles()
+     // const classes = useStyles()
     const expand = React.createRef();
 		useEffect(() => {
 			gsap.fromTo(
@@ -40,47 +53,9 @@ function CreateRecipeInstructions(props) {
 			);
 		});
     return (
-			<Grid container className={classes.recipeDescriptionFormContainer}>
-				<Grid item ref={expand} className={classes.recipeStepsFormItem}>
-					<Typography variant="h2" className={classes.loginHeader}>
-						Add the steps to cook the recipe here
-					</Typography>
-					<br></br>
-					
-					<br></br>
-					<Typography variant="h2" className={classes.loginHeader}>
-						Recipe Description
-					</Typography>
-					<TextField
-						placeholder="Where did you get this recipe from?"
-						type="text"
-						name="where"
-						className={classes.descFormInput}
-					/>
-					<TextField
-						placeholder="Whats great about this recipe?"
-						type="text"
-						name="great"
-						className={classes.descFormInput}
-					/>
-					<TextField
-						placeholder="Before you begin, what do you need to know"
-						type="text"
-						name="great"
-						className={classes.descFormInput}
-					/>
-					<Grid item className={classes.descSubmit}>
-						<Button
-							variant="contained"
-							color="secondary"
-							onClick={null}
-							className={classes.loginButton}
-						>
-							ADD RECIPE DESCRIPTION
-						</Button>
-					</Grid>
-				</Grid>
-			</Grid>
+			<div>
+
+			</div>
     )
 }
 

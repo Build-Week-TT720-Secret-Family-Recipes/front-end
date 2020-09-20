@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import React from "react";
+//import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 
@@ -12,8 +12,12 @@ import { useStyles } from "../Styles/Styles";
 import TextField from "@material-ui/core/TextField";
 
 function Register(props) {
+<<<<<<< HEAD
+  //const [user, setUser] = useState({});
+=======
 
     const classes = useStyles();
+>>>>>>> main
 
   const { register, handleSubmit, errors } = useForm();
 

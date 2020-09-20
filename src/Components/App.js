@@ -10,9 +10,13 @@ import Dashboard from "./Dashboard";
 
 import PrivateRoute from "./privateRoute";
 //import Login from "./Login"
+<<<<<<< HEAD
+import CreateRecipe from "./createRecipeForm/createRecipeParent/createRecipeParentEmpty"
+=======
 import CreateRecipe from "./createRecipeForm/createRecipeParent";
 
 import WizardForm from "./RecipeWizardForm/AddRecipeForm";
+>>>>>>> main
 
 function App() {
 	return (

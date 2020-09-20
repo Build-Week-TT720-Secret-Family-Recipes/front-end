@@ -1,0 +1,42 @@
+import React from 'react';
+import { connect } from "react-redux";
+import Typography from "@material-ui/core/Typography";
+import Grid from "@material-ui/core/Grid";
+import { useStyles } from "../../../Styles/Styles";
+
+const CreateRecipeParentWithDesc = ({
+	recipeOrigin,
+	recipePros,
+	needToKnow,
+	recipeName,
+}) => {
+const classes = useStyles();
+	return recipeOrigin ? (
+		<Grid container className={classes.recipeFormPopulatedContainer}>
+			<Grid item className={classes.tempHeader}>
+				{recipeName}
+			</Grid>
+			<Grid item className={classes.recipeFormPopulatedItem}>
+				<Typography className={classes.recipeFormPopulatedText}>
+					<h3>Recipe Information</h3>
+					<h4> This recipe came from: {recipeOrigin}</h4>
+					<h4> Whats great about this recipe?: {recipePros}</h4>
+					<h4>
+						{" "}
+						What do you need to know before starting this Recipe?: {needToKnow}
+					</h4>
+				</Typography>
+			</Grid>
+		</Grid>
+	) : (
+		<Grid item className={classes.tempHeader}>
+			Add a recipe
+		</Grid>
+	);
+};
+
+  const mapStateToProps = (state) => {
+		return state;
+	};
+
+export default connect(mapStateToProps)(CreateRecipeParentWithDesc);
