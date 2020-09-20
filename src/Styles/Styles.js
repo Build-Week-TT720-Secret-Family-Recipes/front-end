@@ -66,21 +66,27 @@ export const useStyles = makeStyles((theme) => ({
 	},
 
 	accessCatagorySpecificFormContainerLeft: {
-		border: "2px solid blue",
+		backgroundColor: "#DF98F5",
+		margin: "10px",
+		borderRadius: "50px",
 		display: "flex",
-		width: "50vw",
+		width: "60vw",
+		boxShadow: "0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)",
 	},
 
 	accessCatagorySpecificFormContainerRight: {
-		border: "2px solid green",
+		backgroundColor: "#DF98F5",
+		margin: "10px",
+		borderRadius: "50px",
 		display: "flex",
 		flexDirection: "row-reverse",
-		width: "50vw",
+		width: "60vw",
+		boxShadow: "0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)",
 	},
 	ul: {
-		border: "2px solid red",
+		fontSize: "1vw",
 		height: "250px",
-		width: "70%",
+		width: "100%",
 		display: "flex",
 		flexDirection: "column",
 		justifyContent: "center",
@@ -97,7 +103,7 @@ export const useStyles = makeStyles((theme) => ({
 		margin: "60px",
 		backgroundSize: "cover",
 		borderRadius: "50px",
-		width: "20%",
+		width: "40%",
 		height: "125px",
 	},
 	accessCatagorySpecificFormIngredients: {
@@ -105,7 +111,7 @@ export const useStyles = makeStyles((theme) => ({
 		margin: "60px",
 		backgroundSize: "cover",
 		borderRadius: "50px",
-		width: "20%",
+		width: "40%",
 		height: "125px",
 	},
 	accessCatagorySpecificFormDefineSteps: {
@@ -113,7 +119,7 @@ export const useStyles = makeStyles((theme) => ({
 		margin: "60px",
 		backgroundSize: "cover",
 		borderRadius: "50px",
-		width: "20%",
+		width: "40%",
 		height: "125px",
 	},
 	accessCatagorySpecificFormAdtnlInstr: {
@@ -121,7 +127,7 @@ export const useStyles = makeStyles((theme) => ({
 		margin: "60px",
 		backgroundSize: "cover",
 		borderRadius: "50px",
-		width: "20%",
+		width: "40%",
 		height: "125px",
 	},
 	createRecipeDescriptionText: {

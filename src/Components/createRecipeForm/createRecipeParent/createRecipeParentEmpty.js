@@ -13,7 +13,7 @@ import CreateRecipeParentWithDesc from "./createRecipeParentPopulated";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import { useStyles } from "/Users/quietcalmrecords/School/Unit3/BUILDWEEK 3/front-end/src/Styles/Styles.js";
-
+import Paper from "@material-ui/core/Paper";
 //CRUD
 //import axios from "axios";
 
@@ -44,26 +44,51 @@ function CreateRecipe({
 			</Grid>
 			<Grid
 				container
-				className={classes.accessCatagorySpecificFormContainerLeft}
+				className={
+					describePopulated
+						? classes.hideEl
+						: classes.accessCatagorySpecificFormContainerLeft
+				}
+				onClick={() =>
+					setTemporaryState({
+						...temporaryState,
+						createDisplay: false,
+						descDisplay: true,
+					})
+				}
 			>
 				<Grid
 					item
-					className={
-						describePopulated
-							? classes.hideEl
-							: classes.accessCatagorySpecificFormDescribe
-					}
-					onClick={() =>
-						setTemporaryState({
-							...temporaryState,
-							createDisplay: false,
-							descDisplay: true,
-						})
-					}
-				>
-					<Typography className={classes.createRecipeDescriptionText}>
-						Categorize & describe your recipe here
+					className={classes.accessCatagorySpecificFormDescribe}
+				></Grid>
+				<Grid item className={classes.formInfo}>
+					<Typography className={classes.ul}>
+						Give your new recipe a name.
+						<br></br>
+						Record where you found it.
+						<br></br>
+						Be sure to notate important things to know before starting
+						<br></br>
 					</Typography>
+				</Grid>
+			</Grid>
+			<Grid
+				container
+				className={
+					ingredientsPopulated
+						? classes.hideEl
+						: classes.accessCatagorySpecificFormContainerRight
+				}
+				onClick={() =>
+					setTemporaryState({
+						...temporaryState,
+						createDisplay: false,
+						ingDisplay: true,
+					})
+				}
+			>
+				<Grid item className={classes.accessCatagorySpecificFormIngredients}>
+
 				</Grid>
 				<Grid item className={classes.formInfo}>
 					<Typography className={classes.ul}>
@@ -75,26 +100,21 @@ function CreateRecipe({
 			</Grid>
 			<Grid
 				container
-				className={classes.accessCatagorySpecificFormContainerRight}
+				className={
+					stepsPopulated
+						? classes.hideEl
+						: classes.accessCatagorySpecificFormContainerLeft
+				}
+				onClick={() =>
+					setTemporaryState({
+						...temporaryState,
+						createDisplay: false,
+						stepsDisplay: true,
+					})
+				}
 			>
-				<Grid
-					item
-					className={
-						ingredientsPopulated
-							? classes.hideEl
-							: classes.accessCatagorySpecificFormIngredients
-					}
-					onClick={() =>
-						setTemporaryState({
-							...temporaryState,
-							createDisplay: false,
-							ingDisplay: true,
-						})
-					}
-				>
-					<Typography className={classes.createRecipeDescriptionText}>
-						List the ingredients & measurements here
-					</Typography>
+				<Grid item className={classes.accessCatagorySpecificFormDefineSteps}>
+
 				</Grid>
 				<Grid item className={classes.formInfo}>
 					<Typography className={classes.ul}>
@@ -104,28 +124,23 @@ function CreateRecipe({
 					</Typography>
 				</Grid>
 			</Grid>
-			<Grid
+			<Paper
 				container
-				className={classes.accessCatagorySpecificFormContainerLeft}
+				className={
+					additionalInstructionsPopulated
+						? classes.hideEl
+						: classes.accessCatagorySpecificFormContainerRight
+				}
+				onClick={() =>
+					setTemporaryState({
+						...temporaryState,
+						createDisplay: false,
+						addDisplay: true,
+					})
+				}
 			>
-				<Grid
-					item
-					className={
-						stepsPopulated
-							? classes.hideEl
-							: classes.accessCatagorySpecificFormDefineSteps
-					}
-					onClick={() =>
-						setTemporaryState({
-							...temporaryState,
-							createDisplay: false,
-							stepsDisplay: true,
-						})
-					}
-				>
-					<Typography className={classes.createRecipeDescriptionText}>
-						Define the steps here
-					</Typography>
+				<Grid item className={classes.accessCatagorySpecificFormAdtnlInstr}>
+					
 				</Grid>
 				<Grid item className={classes.formInfo}>
 					<Typography className={classes.ul}>
@@ -134,38 +149,7 @@ function CreateRecipe({
 						test
 					</Typography>
 				</Grid>
-			</Grid>
-			<Grid
-				container
-				className={classes.accessCatagorySpecificFormContainerRight}
-			>
-				<Grid
-					item
-					className={
-						additionalInstructionsPopulated
-							? classes.hideEl
-							: classes.accessCatagorySpecificFormAdtnlInstr
-					}
-					onClick={() =>
-						setTemporaryState({
-							...temporaryState,
-							createDisplay: false,
-							addDisplay: true,
-						})
-					}
-				>
-					<Typography className={classes.createRecipeDescriptionText}>
-						Any additional instructions can go here
-					</Typography>
-				</Grid>
-				<Grid item className={classes.formInfo}>
-					<Typography className={classes.ul}>
-						temporaryState
-						<br></br>
-						test
-					</Typography>
-				</Grid>
-			</Grid>
+			</Paper>
 		</Grid>
 	) : temporaryState.descDisplay ? (
 		<CreateRecipeDesc
