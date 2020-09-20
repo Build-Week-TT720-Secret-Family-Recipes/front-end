@@ -9,10 +9,12 @@ import rootReducer from './Reducer';
 import App from './Components/App';
 
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+// const enhancer = compose(applyMiddleware(thunk, logger));
 
-const enhancer = compose(applyMiddleware(thunk, logger));
-
-const store = createStore(rootReducer, enhancer);
+const store = createStore(
+    rootReducer, 
+    composeEnhancers(applyMiddleware(thunk, logger)));
 
 
 ReactDOM.render(
