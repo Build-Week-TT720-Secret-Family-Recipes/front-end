@@ -6,11 +6,13 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Login from './LogIn';
 import Register from "./Register";
-
 import Dashboard from "./Dashboard";
+
 import PrivateRoute from "./privateRoute";
 //import Login from "./Login"
-import CreateRecipe from "./createRecipeForm/createRecipeParent"
+import CreateRecipe from "./createRecipeForm/createRecipeParent";
+
+import WizardForm from "./WizardForm/WizardForm";
 
 function App() {
 	return (
@@ -25,6 +27,7 @@ function App() {
 					</Route>
 					<Route path="/login" component={Login} />
 					<Route path="/register" component={Register} />
+					<Route path="/wizard-form" component={WizardForm} />>
 				</Switch>
 			</div>
 		</Router>
