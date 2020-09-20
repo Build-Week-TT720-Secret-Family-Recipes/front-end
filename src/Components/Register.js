@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import React from "react";
+//import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 
 function Register(props) {
-  const [user, setUser] = useState({});
+  //const [user, setUser] = useState({});
 
   const { register, handleSubmit, errors } = useForm();
 

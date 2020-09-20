@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
-import { useForm } from "react-hook-form";
+import React, { useState } from "react";
+// import { useHistory } from "react-router-dom";
+
 import { connect } from "react-redux";
-import { useSelector } from "react-redux";
+
 
 //COMPONENT IMPORTS
 import CreateRecipeDesc from "../createRecipeDesc";
@@ -13,13 +13,8 @@ import CreateRecipeParentWithDesc from "./createRecipeParentWithDesc"
 //STYLING
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
-import Button from "@material-ui/core/Button";
-import Paper from "@material-ui/core/Paper";
 import { useStyles } from "/Users/quietcalmrecords/School/Unit3/BUILDWEEK 3/front-end/src/Styles/Styles.js";
-import TextField from "@material-ui/core/TextField";
 
-//GSAP
-import { gsap } from "gsap";
 
 //CRUD
 //import axios from "axios";
@@ -88,7 +83,9 @@ function CreateRecipe({
 			<Grid
 				item
 				className={
-					stepsPopulated ? classes.createRecipeDescription : classes.hideEl
+					stepsPopulated
+						? classes.hideEl
+						: classes.createRecipeDescription
 				}
 				onClick={() =>
 					setTemporaryState({

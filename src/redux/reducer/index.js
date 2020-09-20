@@ -44,11 +44,10 @@ export const initialState = {
 console.log(initialState)
 const dataReducer = (state = initialState, action) => {
 	switch (action.type) {
-        case DISPLAY_FORM_ELEMENTS:
-            return {
-            state: action.payload
-            
-            }
+		case DISPLAY_FORM_ELEMENTS:
+			return {
+				state: action.payload,
+			};
 		case ADD_TO_STATE_DESCRIBE:
 			return {
 				...state,
@@ -72,6 +71,8 @@ const dataReducer = (state = initialState, action) => {
 				...state,
 				additionalInstructionsPopulated: true,
 			};
+		default:
+			return state;
 	}
 };
 

@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
-import { useHistory } from "react-router-dom";
-import {reduxForm, Field} from 'redux-form'
+// import { useHistory } from "react-router-dom";
+// import {reduxForm, Field} from 'redux-form'
 import { useForm } from "react-hook-form";
 //REDUX
 import { connect } from "react-redux";
