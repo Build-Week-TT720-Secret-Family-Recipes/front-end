@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // import { useHistory } from "react-router-dom";
 
 import { connect } from "react-redux";
@@ -12,8 +12,9 @@ import CreateRecipeParentWithDesc from "./createRecipeParentPopulated";
 //STYLING
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
-import { useStyles } from "/Users/quietcalmrecords/School/Unit3/BUILDWEEK 3/front-end/src/Styles/Styles.js";
+import { useStyles } from "../../../Styles/Styles";
 import Paper from "@material-ui/core/Paper";
+import { gsap } from "gsap";
 //CRUD
 //import axios from "axios";
 
@@ -24,7 +25,6 @@ function CreateRecipe({
 	additionalInstructionsPopulated,
 }) {
 	//STATE
-
 	const [temporaryState, setTemporaryState] = useState({
 		createDisplay: true,
 		descDisplay: false,
@@ -34,7 +34,84 @@ function CreateRecipe({
 	});
 	//STYLING
 	const classes = useStyles();
-
+	const delay0 = React.createRef();
+	const delay1 = React.createRef();
+	const delay2 = React.createRef();
+	const delay3 = React.createRef();
+	useEffect(() => {
+		gsap.fromTo(
+			delay0.current,
+			// these effects expand an image in the center of the screen.
+			{
+				//this first set of curly brackets is the from co-ordinates
+				y: 0,
+				x: 300,
+				opacity: 0,
+			},
+			{
+				//this first set of curly brackets is the from co-ordinates
+				y: 0,
+				x: 0,
+				opacity: 1,
+				duration: 1,
+				delay: 1,
+			}
+		);
+		gsap.fromTo(
+			delay1.current,
+			// these effects expand an image in the center of the screen.
+			{
+				//this first set of curly brackets is the from co-ordinates
+				y: 0,
+				x: 300,
+				opacity: 0,
+			},
+			{
+				//this first set of curly brackets is the from co-ordinates
+				y: 0,
+				x: 0,
+				opacity: 1,
+				duration: 1,
+				delay: 1,
+			}
+		);
+		gsap.fromTo(
+			delay2.current,
+			// these effects expand an image in the center of the screen.
+			{
+				//this first set of curly brackets is the from co-ordinates
+				y: 0,
+				x: -300,
+				opacity: 0,
+			},
+			{
+				//this first set of curly brackets is the from co-ordinates
+				y: 0,
+				x: 0,
+				opacity: 1,
+				duration: 1,
+				delay: 1,
+			}
+		);
+		gsap.fromTo(
+			delay3.current,
+			// these effects expand an image in the center of the screen.
+			{
+				//this first set of curly brackets is the from co-ordinates
+				y: 0,
+				x: -300,
+				opacity: 0,
+			},
+			{
+				//this first set of curly brackets is the from co-ordinates
+				y: 0,
+				x: 0,
+				opacity: 1,
+				duration: 1,
+				delay: 1,
+			}
+		);
+	});
 	return temporaryState.createDisplay ? (
 		<Grid container className={classes.createRecipeContainer}>
 			<Grid container className={classes.recipe}>
@@ -44,6 +121,7 @@ function CreateRecipe({
 			</Grid>
 			<Grid
 				container
+				ref={delay0}
 				className={
 					describePopulated
 						? classes.hideEl
@@ -63,6 +141,7 @@ function CreateRecipe({
 			</Grid>
 			<Grid
 				container
+				ref={delay1}
 				className={
 					ingredientsPopulated
 						? classes.hideEl
@@ -82,6 +161,7 @@ function CreateRecipe({
 			</Grid>
 			<Paper
 				container
+				ref={delay2}
 				className={
 					stepsPopulated
 						? classes.hideEl
@@ -101,6 +181,7 @@ function CreateRecipe({
 			</Paper>
 			<Paper
 				container
+				ref={delay3}
 				className={
 					additionalInstructionsPopulated
 						? classes.hideEl

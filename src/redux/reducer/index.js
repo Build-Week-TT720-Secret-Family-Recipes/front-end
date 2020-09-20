@@ -13,6 +13,7 @@ export const initialState = {
 	addDisplay: false,
 	//DESCRIBE THE RECIPE FORM
 	recipeOrigin: false,
+	recipeName: "",
 	recipePros: "",
 	needToKnow: "",
 	prepTime: "",
@@ -51,6 +52,7 @@ const dataReducer = (state = initialState, action) => {
 		case ADD_TO_STATE_DESCRIBE:
 			return {
 				...state,
+				recipeName: action.payload.name,
 				recipeOrigin: action.payload.where,
 				recipePros: action.payload.great,
 				needToKnow: action.payload.before,

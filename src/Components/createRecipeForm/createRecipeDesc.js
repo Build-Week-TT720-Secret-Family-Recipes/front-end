@@ -1,7 +1,7 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 // import { useHistory } from "react-router-dom";
 // import {reduxForm, Field} from 'redux-form'
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 //REDUX
 import { connect } from "react-redux";
 import { addToStateDescribe } from "../../redux/actions";
@@ -10,19 +10,18 @@ import { addToStateDescribe } from "../../redux/actions";
 import Typography from "@material-ui/core/Typography";
 import FormGroup from "@material-ui/core/FormGroup";
 import Grid from "@material-ui/core/Grid";
-import Checkbox from '@material-ui/core/Checkbox';
+import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Button from "@material-ui/core/Button";
-import { useStyles } from "/Users/quietcalmrecords/School/Unit3/BUILDWEEK 3/front-end/src/Styles/Styles.js";
-import TextField from '@material-ui/core/TextField'
-import { gsap } from 'gsap'
+import { useStyles } from "../../Styles/Styles";
+import TextField from "@material-ui/core/TextField";
+import { gsap } from "gsap";
 
 //CRUD
 //import axios from "axios";
 
-
 function CreateRecipeDesc(props) {
-const {register, handleSubmit} = useForm()
+	const { register, handleSubmit, control } = useForm();
 	const classes = useStyles();
 	const expand = React.createRef();
 	useEffect(() => {
@@ -46,47 +45,56 @@ const {register, handleSubmit} = useForm()
 	});
 
 	const onSubmit = (data) => {
-		return(
-		props.addToStateDescribe(data),
-		props.display()
-		)
-	}
+		console.log(data);
+		return props.addToStateDescribe(data), props.display();
+	};
 
-	
 	return (
 		<Grid container className={classes.recipeDescriptionFormContainer}>
 			<Grid item ref={expand} className={classes.recipeDescriptionFormItem}>
+				<Typography variant="h2" className={classes.loginHeader}>
+					Recipe Name
+				</Typography>
+				<br></br>
+				<TextField
+					placeholder="Whats the name of this dish?"
+					type="text"
+					name="name"
+					className={classes.descFormInput}
+					inputRef={register}
+				/>
 				<Typography variant="h2" className={classes.loginHeader}>
 					When will you eat this?
 				</Typography>
 				<br></br>
 				<FormGroup row onSubmit={handleSubmit(onSubmit)}>
 					<FormControlLabel
-						control={<Checkbox name="checkedC" />}
+						control={<Checkbox name="Breakfast" />}
 						label="Breakfast"
 					/>
+					<FormControlLabel control={<Checkbox name="Lunch" />} label="Lunch" />
 					<FormControlLabel
-						control={<Checkbox name="checkedC" />}
-						label="Lunch"
-					/>
-					<FormControlLabel
-						control={<Checkbox name="checkedC" />}
+						control={<Checkbox name="Dinner" />}
 						label="Dinner"
 					/>
 					<FormControlLabel
-						control={<Checkbox name="checkedC" />}
-						label="Desert"
+						control={<Checkbox name="Dessert" />}
+						label="Dessert"
 					/>
 					<FormControlLabel
-						control={<Checkbox name="checkedC" />}
+						control={<Checkbox name="Snacks" />}
 						label="Snacks"
 					/>
 					<FormControlLabel
-						control={<Checkbox name="checkedC" />}
+						control={<Checkbox name="Drinks" />}
 						label="Drinks"
 					/>
 					<FormControlLabel
-						control={<Checkbox name="checkedC" />}
+						control={<Checkbox name="Appetizer" />}
+						label="Appetizer"
+					/>
+					<FormControlLabel
+						control={<Checkbox name="Whenever" />}
 						label="Whenever"
 					/>
 				</FormGroup>
@@ -137,5 +145,4 @@ const mapDispatchToProps = {
 	addToStateDescribe,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps) (CreateRecipeDesc);
-
+export default connect(mapStateToProps, mapDispatchToProps)(CreateRecipeDesc);

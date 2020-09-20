@@ -134,7 +134,7 @@ export const useStyles = makeStyles((theme) => ({
 	},
 	ul: {
 		fontSize: "1vw",
-		height: "1vh",
+
 		width: "100%",
 		height: "100%",
 		textAlign: "center",
