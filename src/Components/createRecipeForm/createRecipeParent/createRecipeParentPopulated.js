@@ -4,12 +4,12 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import { useStyles } from "../../../Styles/Styles";
 import Button from "@material-ui/core/Button";
+import { axiosWithAuth } from '../../../API/AxiosWithAuth'
+import { useHistory } from "react-router-dom";
 
 const CreateRecipeParentWithDesc = ({
 	recipe,
 	recipeOrigin,
-	recipePros,
-	needToKnow,
 	describePopulated,
 	categoryId,
 	userId,
@@ -21,22 +21,32 @@ const CreateRecipeParentWithDesc = ({
 	recipeImage,
 }) => {
 	const classes = useStyles();
+	const { push } = useHistory();
 	const sendRecipeObject = () => {
 		const recipeObject = {
 			title:  recipeName ,
 			source:  recipeOrigin ,
 			imgUrl:  recipeImage ,
-			//ingredients: [{id,quantity,recipe_id,}],
+			ingredients: '[{id,quantity,recipe_id,}]',
 			instructions:  steps ,
 			categoryId:  categoryId ,
 			userId: userId ,
 		};
 		console.log(recipeObject);
+		axiosWithAuth()
+			.post(`/recipes`, recipeObject)
+			.then((res) => {
+				push("/dashboard");
+			})
+			.catch((err) => console.log("error: ", err));
 	};
 	return recipe ? (
 		<Grid container className={classes.recipeFormPopulatedContainer}>
 			<Grid item>
 				<Typography className={classes.recipeName}>{recipeName}</Typography>
+			</Grid>
+			<Grid item>
+				<Typography className={classes.categoryName}>{categoryId}</Typography>
 			</Grid>
 			<Grid item className={classes.recipeFormPopulatedItem}>
 				<Typography

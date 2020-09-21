@@ -5,20 +5,25 @@ import { ADD_TO_STATE_ADDITIONAL_INSTRUCTIONS } from "../actions";
 import { DISPLAY_FORM_ELEMENTS } from "../actions";
 
 export const initialState = {
+	//STATE TO SHOW/HIDE ELEMENTS
+	recipe: false,
+	recipeImage: false,
+	recipeImagePopulated: false,
+	ingredientsPopulated: false,
+	stepsPopulated: false,
+	describePopulated: false,
 	//USER
 	userId: "",
-	//DESCRIBE THE RECIPE FORM
-	recipe: false,
+	//STATE TO BE SENT TO THE BACKEND
 	recipeOrigin: "",
 	recipeName: "",
 	categoryId: "",
-
 	recipePros: "",
 	needToKnow: "",
 	prepTime: "",
 	cookTime: "",
-	describePopulated: false,
-	//INGREDIENTS FORM
+	steps: "",
+	//ADD A RECIPE FORM
 	ingredients: "",
 	// ingredients: [
 	// 	{ ingredient0: null, quantity: null },
@@ -33,13 +38,6 @@ export const initialState = {
 	// 	{ ingredient9: null, quantity: null },
 	// 	{ ingredient10: null, quantity: null },
 	// ],
-	ingredientsPopulated: false,
-	//STEPS FORM
-	steps: "",
-	stepsPopulated: false,
-	//recipeImage FORM
-	recipeImage: false,
-	recipeImagePopulated: false,
 };
 
 const dataReducer = (state = initialState, action) => {
@@ -53,8 +51,7 @@ const dataReducer = (state = initialState, action) => {
 				...state,
 				recipeName: action.payload.name,
 				recipeOrigin: action.payload.where,
-				recipePros: action.payload.great,
-				needToKnow: action.payload.before,
+				categoryId: action.payload.category,
 				recipe: true,
 				describePopulated: true,
 			};

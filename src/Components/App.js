@@ -15,7 +15,6 @@ function App() {
 	return (
 		<Router>
 			<div>
-				
 				<Switch>
 					<PrivateRoute exact path="/protected" component={Dashboard} />
 
@@ -24,6 +23,7 @@ function App() {
 					</Route>
 					<Route path="/login" component={Login} />
 					<Route path="/register" component={Register} />
+					<Route path="/register" component={Dashboard} />
 				</Switch>
 			</div>
 		</Router>

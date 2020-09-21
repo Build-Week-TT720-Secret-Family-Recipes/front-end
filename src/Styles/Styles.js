@@ -31,7 +31,7 @@ export const useStyles = makeStyles((theme) => ({
 		justifyContent: "center",
 		alignItems: "center",
 	},
-	loginHeader: {},
+
 	loginForm: {
 		margin: "30px",
 		display: "flex",
@@ -82,6 +82,9 @@ export const useStyles = makeStyles((theme) => ({
 		textAlign: "center",
 		fontSize: "6vw",
 		marginTop: "-100px",
+	},
+	formHeader: {
+		fontSize: "3vw",
 	},
 	accessCatagorySpecificFormContainer: {
 		border: "2px solid gold",
@@ -216,7 +219,7 @@ export const useStyles = makeStyles((theme) => ({
 		borderRadius: "50px",
 		display: "flex",
 		flexDirection: "column",
-		justifyContent: "center",
+		justifyContent: "space-around",
 		alignItems: "center",
 	},
 	descFormInput: {
@@ -257,6 +260,10 @@ export const useStyles = makeStyles((theme) => ({
 	recipeName: {
 		color: "beige",
 		fontSize: "3.5vw",
+	},
+	categoryName: {
+		color: "beige",
+		fontSize: "1.5vw",
 	},
 	recipeOrigin: {},
 	recipeIngredients: {},

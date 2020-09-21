@@ -29,15 +29,15 @@ function Login() {
 
     const formSubmit = (data) => {
         axios
-        	.post("", data)
-        	.then((res) => {
-        		console.log("login response:", data);
-        		localStorage.setItem("token", res.data.token);
-        		push("/protected");
-        	})
-        	.catch((err) => {
-        		console.log(err);
-        	});
+					.post("https://tt720-secret-family-recipes.herokuapp.com/", data)
+					.then((res) => {
+						console.log("login response:", data);
+						localStorage.setItem("token", res.data.token);
+						push("/protected");
+					})
+					.catch((err) => {
+						console.log(err);
+					});
     };
 
     return (

@@ -8,8 +8,6 @@ import { addToStateDescribe } from "../../redux/actions";
 import Typography from "@material-ui/core/Typography";
 import FormGroup from "@material-ui/core/FormGroup";
 import Grid from "@material-ui/core/Grid";
-import Checkbox from "@material-ui/core/Checkbox";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Button from "@material-ui/core/Button";
 import { useStyles } from "../../Styles/Styles";
 import TextField from "@material-ui/core/TextField";
@@ -43,17 +41,14 @@ function CreateRecipeDesc(props) {
 	});
 
 	const onSubmit = (data) => {
-		console.log(data);
+		console.log(data)
 		return props.addToStateDescribe(data), props.display();
 	};
 
 	return (
 		<Grid container className={classes.recipeDescriptionFormContainer}>
 			<Grid item ref={expand} className={classes.recipeDescriptionFormItem}>
-				<Typography variant="h2" className={classes.loginHeader}>
-					Recipe Name
-				</Typography>
-				<br></br>
+				<Typography className={classes.formHeader}>Recipe Name</Typography>
 				<TextField
 					placeholder="Whats the name of this dish?"
 					type="text"
@@ -61,63 +56,91 @@ function CreateRecipeDesc(props) {
 					className={classes.descFormInput}
 					inputRef={register}
 				/>
-				<Typography variant="h3" className={classes.loginHeader}>
+				<Typography className={classes.formHeader}>
 					When will you eat this?
 				</Typography>
-				<br></br>
-				<FormGroup row onSubmit={handleSubmit(onSubmit)}>
-					<FormControlLabel
-						control={<Checkbox name="Breakfast" />}
-						label="Breakfast"
-					/>
-					<FormControlLabel control={<Checkbox name="Lunch" />} label="Lunch" />
-					<FormControlLabel
-						control={<Checkbox name="Dinner" />}
-						label="Dinner"
-					/>
-					<FormControlLabel
-						control={<Checkbox name="Dessert" />}
-						label="Dessert"
-					/>
-					<FormControlLabel
-						control={<Checkbox name="Snacks" />}
-						label="Snacks"
-					/>
-					<FormControlLabel
-						control={<Checkbox name="Drinks" />}
-						label="Drinks"
-					/>
-					<FormControlLabel
-						control={<Checkbox name="Appetizer" />}
-						label="Appetizer"
-					/>
-					<FormControlLabel
-						control={<Checkbox name="Whenever" />}
-						label="Whenever"
-					/>
+
+				<FormGroup row>
+					<label key="Breakfast">
+						<input
+							type="checkbox"
+							value="breakfast"
+							name="category"
+							ref={register}
+						/>
+						Breakfast
+					</label>
+					<label key="Lunch">
+						<input
+							type="checkbox"
+							value="lunch"
+							name="category"
+							ref={register}
+						/>
+						Lunch
+					</label>
+					<label key="Dinner">
+						<input
+							type="checkbox"
+							value="Dinner"
+							name="category"
+							ref={register}
+						/>
+						Dinner
+					</label>
+					<label key="Dessert">
+						<input
+							type="checkbox"
+							value="Dessert"
+							name="category"
+							ref={register}
+						/>
+						Dessert
+					</label>
+					<label key="Snacks">
+						<input
+							type="checkbox"
+							value="Snacks"
+							name="category"
+							ref={register}
+						/>
+						Snacks
+					</label>
+					<label key="Drinks">
+						<input
+							type="checkbox"
+							value="Drinks"
+							name="category"
+							ref={register}
+						/>
+						Drinks
+					</label>
+					<label key="Appetizers">
+						<input
+							type="checkbox"
+							value="Appetizers"
+							name="category"
+							ref={register}
+						/>
+						Appetizers
+					</label>
+					<label key="Whenever">
+						<input
+							type="checkbox"
+							value="Whenever"
+							name="category"
+							ref={register}
+						/>
+						Whenever
+					</label>
 				</FormGroup>
-				<br></br>
-				<Typography variant="h2" className={classes.loginHeader}>
-					Recipe Description
+				<Typography variant="h2" className={classes.formHeader}>
+					Recipe Origin
 				</Typography>
 				<TextField
 					placeholder="Where did you get this recipe from?"
 					type="text"
 					name="where"
-					className={classes.descFormInput}
-					inputRef={register}
-				/>
-				<TextField
-					placeholder="Whats great about this recipe?"
-					type="text"
-					name="great"
-					className={classes.descFormInput}
-					inputRef={register}
-				/>
-				<TextField
-					placeholder="Before you begin, what do you need to know"
-					type="text"
-					name="before"
 					className={classes.descFormInput}
 					inputRef={register}
 				/>
