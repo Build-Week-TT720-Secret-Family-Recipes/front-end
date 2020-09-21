@@ -2,47 +2,45 @@ import { ADD_TO_STATE_DESCRIBE } from "../actions";
 import { ADD_TO_STATE_INGREDIENTS } from "../actions";
 import { ADD_TO_STATE_STEPS } from "../actions";
 import { ADD_TO_STATE_ADDITIONAL_INSTRUCTIONS } from "../actions";
-import { DISPLAY_FORM_ELEMENTS } from '../actions'
+import { DISPLAY_FORM_ELEMENTS } from "../actions";
 
 export const initialState = {
-	//DISPLAY THE RECIPE FORM
-	createDisplay: true,
-	descDisplay: false,
-	ingDisplay: false,
-	stepsDisplay: false,
-	addDisplay: false,
+	//USER
+	userId: "",
 	//DESCRIBE THE RECIPE FORM
 	recipe: false,
 	recipeOrigin: "",
 	recipeName: "",
+	categoryId: "",
+
 	recipePros: "",
 	needToKnow: "",
 	prepTime: "",
 	cookTime: "",
 	describePopulated: false,
 	//INGREDIENTS FORM
-	ingredients: [
-		{ ingredient0: null, quantity: null },
-		{ ingredient1: null, quantity: null },
-		{ ingredient2: null, quantity: null },
-		{ ingredient3: null, quantity: null },
-		{ ingredient4: null, quantity: null },
-		{ ingredient5: null, quantity: null },
-		{ ingredient6: null, quantity: null },
-		{ ingredient7: null, quantity: null },
-		{ ingredient8: null, quantity: null },
-		{ ingredient9: null, quantity: null },
-		{ ingredient10: null, quantity: null },
-	],
+	ingredients: "",
+	// ingredients: [
+	// 	{ ingredient0: null, quantity: null },
+	// 	{ ingredient1: null, quantity: null },
+	// 	{ ingredient2: null, quantity: null },
+	// 	{ ingredient3: null, quantity: null },
+	// 	{ ingredient4: null, quantity: null },
+	// 	{ ingredient5: null, quantity: null },
+	// 	{ ingredient6: null, quantity: null },
+	// 	{ ingredient7: null, quantity: null },
+	// 	{ ingredient8: null, quantity: null },
+	// 	{ ingredient9: null, quantity: null },
+	// 	{ ingredient10: null, quantity: null },
+	// ],
 	ingredientsPopulated: false,
 	//STEPS FORM
 	steps: "",
 	stepsPopulated: false,
 	//recipeImage FORM
-	recipeImage: "",
+	recipeImage: false,
 	recipeImagePopulated: false,
 };
-
 
 const dataReducer = (state = initialState, action) => {
 	switch (action.type) {
@@ -64,6 +62,7 @@ const dataReducer = (state = initialState, action) => {
 			return {
 				...state,
 				ingredientsPopulated: true,
+				ingredients: action.payload.ingredients,
 				recipe: true,
 			};
 		case ADD_TO_STATE_STEPS:

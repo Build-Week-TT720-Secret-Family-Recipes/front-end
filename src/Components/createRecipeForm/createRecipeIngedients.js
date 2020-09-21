@@ -1,17 +1,12 @@
 import React, { useEffect } from "react";
-// import { useHistory } from "react-router-dom";
-// import {reduxForm, Field} from 'redux-form'
-import { useForm, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 //REDUX
 import { connect } from "react-redux";
 import { addToStateIngredients } from "../../redux/actions";
 
 //STYLING
 import Typography from "@material-ui/core/Typography";
-import FormGroup from "@material-ui/core/FormGroup";
 import Grid from "@material-ui/core/Grid";
-import Checkbox from "@material-ui/core/Checkbox";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Button from "@material-ui/core/Button";
 import { useStyles } from "../../Styles/Styles";
 import TextField from "@material-ui/core/TextField";
@@ -21,7 +16,7 @@ import { gsap } from "gsap";
 //import axios from "axios";
 
 function CreateRecipeIngredients(props) {
-	const { register, handleSubmit, control } = useForm();
+	const { register, handleSubmit } = useForm();
 	const classes = useStyles();
 	const expand = React.createRef();
 	useEffect(() => {
@@ -52,44 +47,15 @@ function CreateRecipeIngredients(props) {
 	return (
 		<Grid container className={classes.recipeDescriptionFormContainer}>
 			<Grid item ref={expand} className={classes.recipeDescriptionFormItem}>
-				<Typography variant="h2" className={classes.loginHeader}>
+				<Typography variant="h2" className={classes.loginFormInput}>
 					Recipe Ingredients
 				</Typography>
 				<br></br>
-				<TextField
-					placeholder="Whats the name of this dish?"
-					type="text"
-					name="name"
-					className={classes.descFormInput}
-					inputRef={register}
-				/>
-				<Typography variant="h2" className={classes.loginHeader}>
-					What ingredients do you need for this recipe.
-				</Typography>
 				<br></br>
-
-				<br></br>
-				<Typography variant="h2" className={classes.loginHeader}>
-					Recipe Ingredients
-				</Typography>
 				<TextField
-					placeholder="Ingredient"
+					placeholder="Ingredients"
 					type="text"
-					name="where"
-					className={classes.descFormInput}
-					inputRef={register}
-				/>
-				<TextField
-					placeholder="Ingredient"
-					type="text"
-					name="great"
-					className={classes.descFormInput}
-					inputRef={register}
-				/>
-				<TextField
-					placeholder="Ingredient"
-					type="text"
-					name="before"
+					name="ingredients"
 					className={classes.descFormInput}
 					inputRef={register}
 				/>

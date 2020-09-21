@@ -10,36 +10,83 @@ const CreateRecipeParentWithDesc = ({
 	recipeOrigin,
 	recipePros,
 	needToKnow,
+	describePopulated,
+	categoryId,
+	userId,
+	stepsPopulated,
+	ingredients,
+	ingredientsPopulated,
 	recipeName,
 	steps,
 	recipeImage,
 }) => {
 	const classes = useStyles();
+	const sendRecipeObject = () => {
+		const recipeObject = {
+			title:  recipeName ,
+			source:  recipeOrigin ,
+			imgUrl:  recipeImage ,
+			//ingredients: [{id,quantity,recipe_id,}],
+			instructions:  steps ,
+			categoryId:  categoryId ,
+			userId: userId ,
+		};
+		console.log(recipeObject);
+	};
 	return recipe ? (
 		<Grid container className={classes.recipeFormPopulatedContainer}>
-			<Grid item className={classes.tempHeader}>
-				<h2>{recipeName}</h2>
+			<Grid item>
+				<Typography className={classes.recipeName}>{recipeName}</Typography>
 			</Grid>
 			<Grid item className={classes.recipeFormPopulatedItem}>
-				<Typography className={classes.recipeFormPopulatedText}>
-					<h3>Recipe Information</h3>
-					<h4> This recipe came from: {recipeOrigin}</h4>
-					<h4> Whats great about this recipe?: {recipePros}</h4>
-					<h4>
-						{" "}
-						What do you need to know before starting this Recipe?: {needToKnow}
-					</h4>
-					<h3>Ingredients</h3>
-					<h4>no ingredients added yet</h4>
-					<h3>Steps</h3>
-					<h4>{steps}</h4>
-					<h3>Additional Notes</h3>
-					<h4>{recipeImage}</h4>
+				<Typography
+					className={
+						describePopulated ? classes.recipeFormPopulatedText : classes.hideEl
+					}
+				>
+					This recipe came from: {recipeOrigin}
+					<Typography
+						className={
+							ingredientsPopulated ? classes.recipeStepsTitle : classes.hideEl
+						}
+					>
+						Ingredients
+					</Typography>
+					<Typography className={classes.recipeIngredients}>
+						{ingredients}
+					</Typography>
+					<Typography
+						className={
+							stepsPopulated ? classes.recipeStepsTitle : classes.hideEl
+						}
+					>
+						Steps
+					</Typography>
+					<Typography>{steps}</Typography>
+					<img
+						src={recipeImage}
+						alt="recipeImage"
+						className={recipeImage ? classes.recipeImage : classes.hideEl}
+					/>
 				</Typography>
-				<Button variant="contained" color="secondary">
-					{" "}
-					ADD RECIPE TO COLLECTION{" "}
-				</Button>
+				<Grid
+					item
+					className={
+						ingredientsPopulated
+							? classes.addRecipe
+							: stepsPopulated
+							? classes.classes.addRecipe
+							: classes.hideEl
+					}
+				>
+					<Button
+						variant="contained"
+						color="secondary"
+						onClick={sendRecipeObject}
+					>
+						ADD RECIPE TO COLLECTION
+					</Button>
+				</Grid>
 			</Grid>
 		</Grid>
 	) : (

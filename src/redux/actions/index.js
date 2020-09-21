@@ -19,9 +19,10 @@ export const addToStateDescribe = (data) => {
 	};
 };
 
-export const addToStateIngredients = () => {
+export const addToStateIngredients = (data) => {
 	return {
 		type: ADD_TO_STATE_INGREDIENTS,
+		payload: data,
 	};
 };
 export const addToStateSteps = (data) => {

@@ -1,17 +1,12 @@
 import React, { useEffect } from "react";
-// import { useHistory } from "react-router-dom";
-// import {reduxForm, Field} from 'redux-form'
-import { useForm, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 //REDUX
 import { connect } from "react-redux";
 import { addToStateSteps } from "../../redux/actions";
 
 //STYLING
 import Typography from "@material-ui/core/Typography";
-import FormGroup from "@material-ui/core/FormGroup";
 import Grid from "@material-ui/core/Grid";
-import Checkbox from "@material-ui/core/Checkbox";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Button from "@material-ui/core/Button";
 import { useStyles } from "../../Styles/Styles";
 import TextField from "@material-ui/core/TextField";
@@ -21,7 +16,7 @@ import { gsap } from "gsap";
 //import axios from "axios";
 
 function CreateRecipeInstructions(props) {
-	const { register, handleSubmit, control } = useForm();
+	const { register, handleSubmit } = useForm();
 	const classes = useStyles();
 	const expand = React.createRef();
 	useEffect(() => {

@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
-// import { useHistory } from "react-router-dom";
-// import {reduxForm, Field} from 'redux-form'
-import { useForm, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 //REDUX
 import { connect } from "react-redux";
 import { addToStateDescribe } from "../../redux/actions";
@@ -21,7 +19,7 @@ import { gsap } from "gsap";
 //import axios from "axios";
 
 function CreateRecipeDesc(props) {
-	const { register, handleSubmit, control } = useForm();
+	const { register, handleSubmit } = useForm();
 	const classes = useStyles();
 	const expand = React.createRef();
 	useEffect(() => {
