@@ -38,7 +38,10 @@ const CreateRecipeParentWithDesc = ({
 			.then((res) => {
 				push("/dashboard");
 			})
-			.catch((err) => console.log("error: ", err));
+			.catch((err) => {
+				console.log("error: ", err)
+				push("/dashboard");
+		});
 	};
 	return recipe ? (
 		<Grid container className={classes.recipeFormPopulatedContainer}>

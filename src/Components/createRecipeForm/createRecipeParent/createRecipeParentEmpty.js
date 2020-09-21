@@ -197,7 +197,7 @@ function CreateRecipe({
 			>
 				<Grid item className={classes.accessCatagorySpecificFormAdtnlInstr}>
 					<Typography className={classes.ul}>
-						ADDITIONAL INSTRUCTIONS
+						ADD A PHOTO
 					</Typography>
 				</Grid>
 			</Paper>
