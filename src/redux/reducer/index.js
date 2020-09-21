@@ -12,7 +12,8 @@ export const initialState = {
 	stepsDisplay: false,
 	addDisplay: false,
 	//DESCRIBE THE RECIPE FORM
-	recipeOrigin: false,
+	recipe: false,
+	recipeOrigin: "",
 	recipeName: "",
 	recipePros: "",
 	needToKnow: "",
@@ -35,14 +36,14 @@ export const initialState = {
 	],
 	ingredientsPopulated: false,
 	//STEPS FORM
-	steps: [""],
+	steps: "",
 	stepsPopulated: false,
-	//ADDITIONAL INSTRUCTIONS FORM
-	additionalInstructions: "",
-	additionalInstructionsPopulated: false,
+	//recipeImage FORM
+	recipeImage: "",
+	recipeImagePopulated: false,
 };
 
-console.log(initialState)
+
 const dataReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case DISPLAY_FORM_ELEMENTS:
@@ -56,22 +57,28 @@ const dataReducer = (state = initialState, action) => {
 				recipeOrigin: action.payload.where,
 				recipePros: action.payload.great,
 				needToKnow: action.payload.before,
+				recipe: true,
 				describePopulated: true,
 			};
 		case ADD_TO_STATE_INGREDIENTS:
 			return {
 				...state,
 				ingredientsPopulated: true,
+				recipe: true,
 			};
 		case ADD_TO_STATE_STEPS:
 			return {
 				...state,
 				stepsPopulated: true,
+				steps: action.payload.steps,
+				recipe: true,
 			};
 		case ADD_TO_STATE_ADDITIONAL_INSTRUCTIONS:
 			return {
 				...state,
-				additionalInstructionsPopulated: true,
+				recipeImagePopulated: true,
+				recipeImage: action.payload.recipeImage,
+				recipe: true,
 			};
 		default:
 			return state;

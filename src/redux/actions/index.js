@@ -24,13 +24,15 @@ export const addToStateIngredients = () => {
 		type: ADD_TO_STATE_INGREDIENTS,
 	};
 };
-export const addToStateSteps = () => {
+export const addToStateSteps = (data) => {
 	return {
 		type: ADD_TO_STATE_STEPS,
+		payload: data,
 	};
 };
-export const addToStateAdditionalInstructions = () => {
+export const addToStateAdditionalInstructions = (data) => {
 	return {
 		type: ADD_TO_STATE_ADDITIONAL_INSTRUCTIONS,
+		payload: data,
 	};
 };

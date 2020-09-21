@@ -57,6 +57,9 @@ export const useStyles = makeStyles((theme) => ({
 	},
 	//CREATE RECIPE PARENT
 	recipe: {},
+	recipeHeader: {
+fontSize: "6vw",
+	},
 	createRecipeContainer: {
 		boxSizing: "border-box",
 		position: "absolute",

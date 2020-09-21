@@ -63,7 +63,7 @@ function CreateRecipeDesc(props) {
 					className={classes.descFormInput}
 					inputRef={register}
 				/>
-				<Typography variant="h2" className={classes.loginHeader}>
+				<Typography variant="h3" className={classes.loginHeader}>
 					When will you eat this?
 				</Typography>
 				<br></br>
