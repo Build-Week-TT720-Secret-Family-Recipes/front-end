@@ -22,9 +22,9 @@ function Register(props) {
   const onSubmit = (data) => {
     console.log(data);
     axios
-      .post("")
+      .post("https://tt720-secret-family-recipes.herokuapp.com/", data)
       .then((res) => {
-        console.log(res);
+        console.log("Register post res: ", res);
       })
       .catch((err) => {
         console.log(err);
