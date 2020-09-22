@@ -22,8 +22,9 @@ function Register(props) {
   const { register, handleSubmit, errors } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+   
     axios
+ register-post
       .post("https://tt720-secret-family-recipes.herokuapp.com/register", data)
       .then((res) => {
         console.log("Register post res: ", res);
