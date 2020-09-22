@@ -4,6 +4,18 @@ import { useForm } from "react-hook-form";
 import { connect } from "react-redux";
 import { addToStateSteps } from "../../redux/actions";
 
+
+// //STYLING
+// import Typography from "@material-ui/core/Typography";
+// import FormGroup from "@material-ui/core/FormGroup";
+// import Grid from "@material-ui/core/Grid";
+// import Checkbox from "@material-ui/core/Checkbox";
+// import FormControlLabel from "@material-ui/core/FormControlLabel";
+// import Button from "@material-ui/core/Button";
+// import Paper from "@material-ui/core/Paper";
+//import { useStyles } from "../../Styles/Styles";
+// import TextField from "@material-ui/core/TextField";
+
 //STYLING
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
