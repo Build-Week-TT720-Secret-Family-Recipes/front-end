@@ -1,7 +1,7 @@
 import { makeStyles } from "@material-ui/core/styles";
 import describe from "./assets/describe.png";
-import ingredients from './assets/ingredients.png'
-import stepsImage from "./assets/stepsImage.jpg"
+import ingredients from "./assets/ingredients.png";
+import stepsImage from "./assets/stepsImage.jpg";
 import createRecipeBackground0 from "./assets/createRecipeBackground0.jpg";
 import addntlInfo from "./assets/addntlInfo.jpeg";
 export const useStyles = makeStyles((theme) => ({
@@ -31,7 +31,7 @@ export const useStyles = makeStyles((theme) => ({
 		justifyContent: "center",
 		alignItems: "center",
 	},
-	loginHeader: {},
+
 	loginForm: {
 		margin: "30px",
 		display: "flex",
@@ -57,6 +57,9 @@ export const useStyles = makeStyles((theme) => ({
 	},
 	//CREATE RECIPE PARENT
 	recipe: {},
+	recipeHeader: {
+		fontSize: "6vw",
+	},
 	createRecipeContainer: {
 		boxSizing: "border-box",
 		position: "absolute",
@@ -80,13 +83,16 @@ export const useStyles = makeStyles((theme) => ({
 		fontSize: "6vw",
 		marginTop: "-100px",
 	},
+	formHeader: {
+		fontSize: "3vw",
+	},
 	accessCatagorySpecificFormContainer: {
 		border: "2px solid gold",
 		backgroundImage: `url(${describe})`,
 		backgroundRepeat: "no-repeat",
 		backgroundSize: "cover",
 		margin: "10px",
-		marginTop: "-400px",
+		marginTop: "-200px",
 		borderRadius: "50px",
 		display: "flex",
 		justifyContent: "center",
@@ -99,7 +105,7 @@ export const useStyles = makeStyles((theme) => ({
 		backgroundRepeat: "no-repeat",
 		backgroundSize: "cover",
 		margin: "10px",
-		marginTop: "-400px",
+		marginTop: "-200px",
 		borderRadius: "50px",
 		display: "flex",
 		justifyContent: "center",
@@ -112,7 +118,7 @@ export const useStyles = makeStyles((theme) => ({
 		backgroundRepeat: "no-repeat",
 		backgroundSize: "cover",
 		margin: "10px",
-		marginTop: "-400px",
+		marginTop: "-200px",
 		borderRadius: "50px",
 		display: "flex",
 		justifyContent: "center",
@@ -125,7 +131,7 @@ export const useStyles = makeStyles((theme) => ({
 		backgroundRepeat: "no-repeat",
 		backgroundSize: "cover",
 		margin: "10px",
-		marginTop: "-400px",
+		marginTop: "-200px",
 		borderRadius: "50px",
 		display: "flex",
 		justifyContent: "center",
@@ -210,10 +216,10 @@ export const useStyles = makeStyles((theme) => ({
 	recipeDescriptionFormItem: {
 		backgroundColor: "#515664",
 		width: "60vw",
-borderRadius: "50px",
+		borderRadius: "50px",
 		display: "flex",
 		flexDirection: "column",
-		justifyContent: "center",
+		justifyContent: "space-around",
 		alignItems: "center",
 	},
 	descFormInput: {
@@ -231,8 +237,11 @@ borderRadius: "50px",
 		justifyContent: "center",
 		alignItems: "center",
 	},
+
+	//RECIPE POPULATED
 	recipeFormPopulatedContainer: {
 		width: "100vw",
+		marginTop: "-100px",
 		display: "flex",
 		flexDirection: "column",
 		justifyContent: "center",
@@ -248,4 +257,30 @@ borderRadius: "50px",
 		width: "100%",
 		textAlign: "center",
 	},
+	recipeName: {
+		color: "beige",
+		fontSize: "3.5vw",
+	},
+	categoryName: {
+		color: "beige",
+		fontSize: "1.5vw",
+	},
+	recipeOrigin: {},
+	recipeIngredients: {},
+	recipeStepsTitle: {
+		fontSize: "2vw",
+	},
+	recipeSteps: {
+		fontSize: "1vw",
+	},
+	recipeImage: {
+		width: "10vw",
+		borderRadius: "50px",
+	},
+	addRecipe: {
+		width: "70vw",
+		display: "flex",
+		justifyContent: "center",
+	},
+	addRecipeButton: {},
 }));

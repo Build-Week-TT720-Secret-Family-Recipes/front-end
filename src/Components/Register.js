@@ -12,12 +12,10 @@ import { useStyles } from "../Styles/Styles";
 import TextField from "@material-ui/core/TextField";
 
 function Register(props) {
-<<<<<<< HEAD
-  //const [user, setUser] = useState({});
-=======
+
 
     const classes = useStyles();
->>>>>>> main
+
 
   const { register, handleSubmit, errors } = useForm();
 

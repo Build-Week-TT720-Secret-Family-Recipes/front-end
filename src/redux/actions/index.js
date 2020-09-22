@@ -19,18 +19,21 @@ export const addToStateDescribe = (data) => {
 	};
 };
 
-export const addToStateIngredients = () => {
+export const addToStateIngredients = (data) => {
 	return {
 		type: ADD_TO_STATE_INGREDIENTS,
+		payload: data,
 	};
 };
-export const addToStateSteps = () => {
+export const addToStateSteps = (data) => {
 	return {
 		type: ADD_TO_STATE_STEPS,
+		payload: data,
 	};
 };
-export const addToStateAdditionalInstructions = () => {
+export const addToStateAdditionalInstructions = (data) => {
 	return {
 		type: ADD_TO_STATE_ADDITIONAL_INSTRUCTIONS,
+		payload: data,
 	};
 };

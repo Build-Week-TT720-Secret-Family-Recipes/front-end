@@ -22,7 +22,7 @@ function CreateRecipe({
 	stepsPopulated,
 	describePopulated,
 	ingredientsPopulated,
-	additionalInstructionsPopulated,
+	recipeImagePopulated,
 }) {
 	//STATE
 	const [temporaryState, setTemporaryState] = useState({
@@ -183,7 +183,7 @@ function CreateRecipe({
 				container
 				ref={delay3}
 				className={
-					additionalInstructionsPopulated
+					recipeImagePopulated
 						? classes.hideEl
 						: classes.accessCatagorySpecificFormContainer3
 				}
@@ -197,7 +197,7 @@ function CreateRecipe({
 			>
 				<Grid item className={classes.accessCatagorySpecificFormAdtnlInstr}>
 					<Typography className={classes.ul}>
-						ADDITIONAL INSTRUCTIONS
+						ADD A PHOTO
 					</Typography>
 				</Grid>
 			</Paper>
@@ -213,11 +213,35 @@ function CreateRecipe({
 			}
 		/>
 	) : temporaryState.ingDisplay ? (
-		<CreateRecipeIngredients />
+		<CreateRecipeIngredients
+			display={() =>
+				setTemporaryState({
+					...temporaryState,
+					createDisplay: true,
+					ingDisplay: false,
+				})
+			}
+		/>
 	) : temporaryState.stepsDisplay ? (
-		<CreateRecipeInstructions />
+		<CreateRecipeInstructions
+			display={() =>
+				setTemporaryState({
+					...temporaryState,
+					createDisplay: true,
+					stepsDisplay: false,
+				})
+			}
+		/>
 	) : temporaryState.addDisplay ? (
-		<CreateRecipeAdtnl />
+		<CreateRecipeAdtnl
+			display={() =>
+				setTemporaryState({
+					...temporaryState,
+					createDisplay: true,
+					addDisplay: false,
+				})
+			}
+		/>
 	) : (
 		<div>ERROR</div>
 	);
