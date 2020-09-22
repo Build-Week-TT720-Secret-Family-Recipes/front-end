@@ -26,7 +26,7 @@ function Login() {
 
 	const formSubmit = (data) => {
 		axios
-			.post("https://tt720-secret-family-recipes.herokuapp.com/", data)
+			.post("https://tt720-secret-family-recipes.herokuapp.com/login", data)
 			.then((res) => {
 				console.log("login response:", data);
 				localStorage.setItem("token", res.data.token);
