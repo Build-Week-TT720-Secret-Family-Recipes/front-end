@@ -1,6 +1,7 @@
 import React from "react";
 //import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 
 import Typography from "@material-ui/core/Typography";
@@ -13,6 +14,7 @@ import TextField from "@material-ui/core/TextField";
 
 function Register(props) {
 
+  const { push } = useHistory();
 
     const classes = useStyles();
 
@@ -22,9 +24,10 @@ function Register(props) {
   const onSubmit = (data) => {
     console.log(data);
     axios
-      .post("https://tt720-secret-family-recipes.herokuapp.com/", data)
+      .post("https://tt720-secret-family-recipes.herokuapp.com/register", data)
       .then((res) => {
         console.log("Register post res: ", res);
+        push("/login");
       })
       .catch((err) => {
         console.log(err);
