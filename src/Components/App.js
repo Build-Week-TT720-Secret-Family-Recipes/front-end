@@ -10,6 +10,11 @@ import PrivateRoute from "./privateRoute";
 //import Login from "./Login"
 import CreateRecipe from "./createRecipeForm/createRecipeParent/createRecipeParentEmpty";
 
+
+
+import WizardForm from "./RecipeWizardForm/AddRecipeForm";
+
+
 function App() {
 	return (
 		<Router>
