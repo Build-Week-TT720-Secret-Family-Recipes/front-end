@@ -4,7 +4,7 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import { useStyles } from "../../../Styles/Styles";
 import Button from "@material-ui/core/Button";
-import { axiosWithAuth } from '../../../API/AxiosWithAuth'
+import { axiosWithAuth } from "../../../API/AxiosWithAuth";
 import { useHistory } from "react-router-dom";
 
 const CreateRecipeParentWithDesc = ({
@@ -24,13 +24,13 @@ const CreateRecipeParentWithDesc = ({
 	const { push } = useHistory();
 	const sendRecipeObject = () => {
 		const recipeObject = {
-			title:  recipeName ,
-			source:  recipeOrigin ,
-			imgUrl:  recipeImage ,
-			ingredients: '[{id,quantity,recipe_id,}]',
-			instructions:  steps ,
-			categoryId:  categoryId ,
-			userId: userId ,
+			title: recipeName,
+			source: recipeOrigin,
+			imgUrl: recipeImage,
+			ingredients: "[{id,quantity,recipe_id,}]",
+			instructions: steps,
+			categoryId: categoryId,
+			userId: userId,
 		};
 		console.log(recipeObject);
 		axiosWithAuth()
@@ -39,9 +39,9 @@ const CreateRecipeParentWithDesc = ({
 				push("/dashboard");
 			})
 			.catch((err) => {
-				console.log("error: ", err)
+				console.log("error: ", err);
 				push("/dashboard");
-		});
+			});
 	};
 	return recipe ? (
 		<Grid container className={classes.recipeFormPopulatedContainer}>

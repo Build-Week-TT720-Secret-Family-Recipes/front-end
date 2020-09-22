@@ -1,25 +1,16 @@
 import React, { useEffect } from "react";
-import { useForm} from "react-hook-form";
+import { useForm } from "react-hook-form";
 //REDUX
 import { connect } from "react-redux";
 import { addToStateAdditionalInstructions } from "../../redux/actions";
 
 //STYLING
-
-// import Typography from "@material-ui/core/Typography";
-// import Grid from "@material-ui/core/Grid";
-// import Button from "@material-ui/core/Button";
-// import Paper from "@material-ui/core/Paper";
-// import { useStyles } from "../../Styles/Styles";
-// import TextField from "@material-ui/core/TextField";
-
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
-import { useStyles } from "../../Styles/Styles"; 
+import { useStyles } from "../../Styles/Styles";
 import TextField from "@material-ui/core/TextField";
 import { gsap } from "gsap";
-
 
 //CRUD
 //import axios from "axios";
@@ -89,7 +80,4 @@ const mapDispatchToProps = {
 	addToStateAdditionalInstructions,
 };
 
-export default connect(
-	mapStateToProps,
-	mapDispatchToProps
-)(CreateRecipeAdtnl);
+export default connect(mapStateToProps, mapDispatchToProps)(CreateRecipeAdtnl);
