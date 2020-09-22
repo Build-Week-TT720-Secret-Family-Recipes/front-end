@@ -1,34 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import logger from "redux-logger";
 import thunk from "redux-thunk";
 import { applyMiddleware, compose, createStore } from "redux";
-
 import { initialState } from "./redux/reducer/index";
-import dataReducer from './redux/reducer'
+import dataReducer from "./redux/reducer";
+import App from "./Components/App";
 
-import rootReducer from './Reducer';
-import App from './Components/App';
+const enhancer = compose(applyMiddleware(logger, thunk));
 
-
-
-
-
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-// const enhancer = compose(applyMiddleware(thunk, logger));
-
-const store = createStore(
-    rootReducer, 
-    composeEnhancers(applyMiddleware(thunk, logger)));
-
-
+const store = createStore(dataReducer, initialState, enhancer);
 
 ReactDOM.render(
-    <React.StrictMode>
-        <Provider store={store}>
-            <App />
-        </Provider>
-    </React.StrictMode>,
-    document.getElementById("root")
+	<React.StrictMode>
+		<Provider store={store}>
+			<App />
+		</Provider>
+	</React.StrictMode>,
+	document.getElementById("root")
 );
