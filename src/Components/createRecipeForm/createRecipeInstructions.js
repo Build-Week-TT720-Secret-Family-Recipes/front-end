@@ -4,18 +4,6 @@ import { useForm } from "react-hook-form";
 import { connect } from "react-redux";
 import { addToStateSteps } from "../../redux/actions";
 
-
-// //STYLING
-// import Typography from "@material-ui/core/Typography";
-// import FormGroup from "@material-ui/core/FormGroup";
-// import Grid from "@material-ui/core/Grid";
-// import Checkbox from "@material-ui/core/Checkbox";
-// import FormControlLabel from "@material-ui/core/FormControlLabel";
-// import Button from "@material-ui/core/Button";
-// import Paper from "@material-ui/core/Paper";
-//import { useStyles } from "../../Styles/Styles";
-// import TextField from "@material-ui/core/TextField";
-
 //STYLING
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
@@ -63,26 +51,25 @@ function CreateRecipeInstructions(props) {
 					Recipe Instructions
 				</Typography>
 				<br></br>
-				
-					<TextField
-						placeholder="Describe the steps to make this meal here"
-						type="text"
-						name="steps"
-						className={classes.descFormInput}
-						inputRef={register}
-					/>
 
-					
-					<Grid item className={classes.descSubmit}>
-						<Button
-							variant="contained"
-							color="secondary"
-							onClick={handleSubmit(onSubmit)}
-							className={classes.descSubmit}
-						>
-							ADD RECIPE INSTRUCTIONS
-						</Button>
-					</Grid>
+				<TextField
+					placeholder="Describe the steps to make this meal here"
+					type="text"
+					name="steps"
+					className={classes.descFormInput}
+					inputRef={register}
+				/>
+
+				<Grid item className={classes.descSubmit}>
+					<Button
+						variant="contained"
+						color="secondary"
+						onClick={handleSubmit(onSubmit)}
+						className={classes.descSubmit}
+					>
+						ADD RECIPE INSTRUCTIONS
+					</Button>
+				</Grid>
 			</Grid>
 		</Grid>
 	);
@@ -92,7 +79,10 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = {
-	addToStateSteps
+	addToStateSteps,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreateRecipeInstructions)
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(CreateRecipeInstructions);
