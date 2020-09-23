@@ -12,7 +12,7 @@ import Typography from "@material-ui/core/Typography";
 import FormGroup from "@material-ui/core/FormGroup";
 import Grid from "@material-ui/core/Grid";
 import { useStyles } from "../../../Styles/Styles";
-import IconButton from "@material-ui/core/IconButton";
+import { axiosWithAuth } from "../../../API/AxiosWithAuth";
 
 function EditRecipeDialog(props) {
 	const [open, setOpen] = useState(false);
@@ -25,8 +25,13 @@ function EditRecipeDialog(props) {
 	const handleClose = () => {
 		setOpen(false);
 	};
-	const updateRecipe = () => {
-		//AXIOS PUT REQUEST GOES HERE
+	const updateRecipe = (data) => {
+		axiosWithAuth()
+			.put(`/recipes/:id`, data)
+			.then((res) => {
+				props.setRecipes(res.data)
+			})
+			.catch((err) => console.log("error: ", err));
 	};
 	
 
@@ -44,11 +49,9 @@ function EditRecipeDialog(props) {
 				<Grid item className={classes.recipeDescriptionFormDialog}>
 					<DialogTitle id="form-dialog-title">Edit Your Recipe</DialogTitle>
 					<DialogContent>
-						<DialogContentText>
-							Here you can make changes to your Recipe
-						</DialogContentText>
-
-						<Typography className={classes.formHeader}>Recipe Name</Typography>
+						<Typography className={classes.dialogHeader}>
+							Recipe Name
+						</Typography>
 						<TextField
 							placeholder="Whats the name of this dish?"
 							type="text"
@@ -56,7 +59,7 @@ function EditRecipeDialog(props) {
 							className={classes.dialogFormInput}
 							inputRef={register}
 						/>
-						<Typography className={classes.formHeader}>
+						<Typography className={classes.dialogHeader}>
 							When will you eat this?
 						</Typography>
 
@@ -134,7 +137,7 @@ function EditRecipeDialog(props) {
 								Whenever
 							</label>
 						</FormGroup>
-						<Typography variant="h2" className={classes.formHeader}>
+						<Typography className={classes.dialogHeader}>
 							Recipe Origin
 						</Typography>
 						<TextField

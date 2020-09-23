@@ -7,7 +7,7 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import DeleteIcon from "@material-ui/icons/Delete";
-import IconButton from "@material-ui/core/IconButton";
+import {axiosWithAuth} from '../../../API/AxiosWithAuth'
 
 function DeleteRecipeDialog(props) {
 	const [open, setOpen] = useState(false);
@@ -21,7 +21,11 @@ function DeleteRecipeDialog(props) {
     };
     
     const deleteRecipe = () => {
-        
+        axiosWithAuth()
+					.delete(`recipes/:id`)
+					.then((res) => {
+						props.setRecipes(res.data);
+					});
     }
 
 	return (
@@ -39,14 +43,13 @@ function DeleteRecipeDialog(props) {
 					<DialogContentText>
 						ARE YOU SURE YOU WANT TO DELETE THIS RECIPE?
 					</DialogContentText>
-					<Button onClick={deleteRecipe}>DELETE</Button>
 				</DialogContent>
 				<DialogActions>
 					<Button onClick={handleClose} color="primary">
 						Cancel
 					</Button>
-					<Button onClick={handleClose} color="primary">
-						Update
+					<Button onClick={deleteRecipe} color="primary">
+						Delete
 					</Button>
 				</DialogActions>
 			</Dialog>

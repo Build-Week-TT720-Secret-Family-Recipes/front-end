@@ -11,12 +11,7 @@ import Collapse from "@material-ui/core/Collapse";
 import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-import { red } from "@material-ui/core/colors";
-import DeleteIcon from "@material-ui/icons/Delete";
-import EditIcon from "@material-ui/icons/Edit";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
-import SimpleModal from './dialogs/EditRecipeDialog'
 import { axiosWithAuth } from "../../API/AxiosWithAuth";
 import EditRecipeDialog from './dialogs/EditRecipeDialog'
 import DeleteRecipeDialog from "./dialogs/deleteRecipeDialog";
@@ -72,10 +67,6 @@ function RecipeCard({
 	const [recipes, setRecipes] = useState([]);
 	const [editRecipe, setEditRecipe] = useState(false)
 
-    
-    
-    
-    
     //API CALL
 	useEffect(() => {
 		axiosWithAuth()
@@ -112,8 +103,8 @@ function RecipeCard({
 				</Typography>
 			</CardContent>
 			<CardActions disableSpacing>
-				<DeleteRecipeDialog />
-				<EditRecipeDialog />
+				<DeleteRecipeDialog setRecipes={setRecipes} />
+				<EditRecipeDialog setRecipes={setRecipes} />
 
 				<IconButton
 					className={clsx(classes.expand, {
