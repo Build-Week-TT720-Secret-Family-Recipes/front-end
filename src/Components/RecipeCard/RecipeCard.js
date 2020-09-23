@@ -70,7 +70,7 @@ function RecipeCard({
     //API CALL
 	useEffect(() => {
 		axiosWithAuth()
-			.get("/recipes")
+			.get("/recipe")
 			.then((res) => console.log(res))
 			.catch((err) => console.log(err.response));
     }, []);
