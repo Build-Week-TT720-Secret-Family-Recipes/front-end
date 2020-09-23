@@ -283,4 +283,18 @@ export const useStyles = makeStyles((theme) => ({
 		justifyContent: "center",
 	},
 	addRecipeButton: {},
+	recipeDescriptionFormDialog: {
+		border: "3px solid gold",
+		width: "100%",
+	},
+	dialogFormInput: {
+		width: "100%",
+	},
+	formgroup: {
+		width: "100%",
+		display: "flex",
+		flexDirection: "column",
+		justifyContent: "center",
+		alignItems: "center",
+	},
 }));
