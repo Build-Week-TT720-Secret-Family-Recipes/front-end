@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Login from "./LogIn";
 import Register from "./Register";
+import RecipeList from "./RecipeList";
 
 import Dashboard from "./Dashboard";
 import PrivateRoute from "./privateRoute";
@@ -12,7 +13,7 @@ import CreateRecipe from "./createRecipeForm/createRecipeParent/createRecipePare
 
 
 
-import WizardForm from "./RecipeWizardForm/AddRecipeForm";
+
 
 
 function App() {
@@ -23,8 +24,9 @@ function App() {
 					<PrivateRoute exact path="/protected" component={Dashboard} />
 
 					<Route exact path="/">
-						<CreateRecipe />
+						<RecipeList />
 					</Route>
+					<Route path="/create" component={CreateRecipe} />
 					<Route path="/login" component={Login} />
 					<Route path="/register" component={Register} />
 				</Switch>
