@@ -12,10 +12,6 @@ import PrivateRoute from "./privateRoute";
 import CreateRecipe from "./createRecipeForm/createRecipeParent/createRecipeParentEmpty";
 
 
-
-
-
-
 function App() {
 	return (
 		<Router>
@@ -24,7 +20,9 @@ function App() {
 					<PrivateRoute exact path="/protected" component={Dashboard} />
 
 					<Route exact path="/">
+
 						<RecipeList />
+
 					</Route>
 					<Route path="/create" component={CreateRecipe} />
 					<Route path="/login" component={Login} />

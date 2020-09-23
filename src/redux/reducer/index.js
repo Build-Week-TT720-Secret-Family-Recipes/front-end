@@ -7,7 +7,7 @@ import { DISPLAY_FORM_ELEMENTS } from "../actions";
 export const initialState = {
 	//STATE TO SHOW/HIDE ELEMENTS
 	recipe: false,
-	recipeImage: false,
+	recipeImage: 'http://s29596.pcdn.co/wp-content/uploads/2015/10/Narnia-buns.jpg',
 	recipeImagePopulated: false,
 	ingredientsPopulated: false,
 	stepsPopulated: false,
@@ -15,16 +15,16 @@ export const initialState = {
 	//USER
 	userId: "",
 	//STATE TO BE SENT TO THE BACKEND
-	recipeOrigin: "",
-	recipeName: "",
+	recipeOrigin: "I found this recipe in Grandmas draw of special things",
+	recipeName: "Marmalade Roll",
 	categoryId: "",
 	recipePros: "",
 	needToKnow: "",
 	prepTime: "",
 	cookTime: "",
-	steps: "",
+	steps: "Cook until just right",
 	//ADD A RECIPE FORM
-	ingredients: "",
+	ingredients: "Marmalade, Roll",
 	// ingredients: [
 	// 	{ ingredient0: null, quantity: null },
 	// 	{ ingredient1: null, quantity: null },
