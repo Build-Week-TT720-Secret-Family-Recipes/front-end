@@ -16,8 +16,10 @@ function RecipeList(props) {
 
     // const { push } = useHistory();
 
-    const onSubmit = () => {
+    const onSubmit = (e) => {
+        e.preventDefault();
         console.log("submitted");
+        
         setSearchValue("");
         console.log("searchValue after submit: ", searchValue);
     }
