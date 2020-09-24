@@ -20,9 +20,7 @@ function App() {
 					<PrivateRoute exact path="/protected" component={Dashboard} />
 
 					<Route exact path="/">
-
 						<RecipeList />
-
 					</Route>
 					<Route path="/create" component={CreateRecipe} />
 					<Route path="/login" component={Login} />

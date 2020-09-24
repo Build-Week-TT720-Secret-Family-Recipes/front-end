@@ -87,7 +87,7 @@ function Login() {
 								className={classes.signUpButtonOnLogInPage}
 								variant="contained"
 								color="secondary"
-								// onClick={history.push("/signup")}
+								onClick={() => push("/register")}
 							>
 								Sign Up
 							</Button>

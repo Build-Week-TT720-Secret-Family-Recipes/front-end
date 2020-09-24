@@ -5,6 +5,8 @@ export const axiosWithAuth = () => {
 	console.log(token);
 	return axios.create({
 		baseURL: "https://tt720-secret-family-recipes.herokuapp.com",
+		cookies: token,
+
 		withCredentials: true,
 	});
 };
