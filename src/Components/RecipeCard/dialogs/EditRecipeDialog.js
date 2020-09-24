@@ -12,7 +12,7 @@ import Typography from "@material-ui/core/Typography";
 import FormGroup from "@material-ui/core/FormGroup";
 import Grid from "@material-ui/core/Grid";
 import { useStyles } from "../../../Styles/Styles";
-import { axiosWithAuth } from "../../../API/AxiosWithAuth";
+import { putRequest } from "../../../redux/actions";
 
 function EditRecipeDialog(props) {
 	const [open, setOpen] = useState(false);
@@ -25,18 +25,14 @@ function EditRecipeDialog(props) {
 	const handleClose = () => {
 		setOpen(false);
 	};
-	const updateRecipe = (data) => {
-		axiosWithAuth()
-			.put(`/recipes/:id`, data)
-			.then((res) => {
-				props.setRecipes(res.data)
-			})
-			.catch((err) => console.log("error: ", err));
-	};
+const onSubmit = (data) => {
+	console.log(data);
+	putRequest(data);
+};
 	
 
 	return (
-		<fragment>
+		<div>
 			<Button variant="outlined" color="primary" onClick={handleClickOpen}>
 				<EditIcon />
 			</Button>
@@ -152,13 +148,13 @@ function EditRecipeDialog(props) {
 						<Button onClick={handleClose} color="primary">
 							Cancel
 						</Button>
-						<Button onClick={updateRecipe} color="primary">
+						<Button onClick={handleSubmit(onSubmit)} color="primary">
 							Update
 						</Button>
 					</DialogActions>
 				</Grid>
 			</Dialog>
-		</fragment>
+		</div>
 	);
 }
 
