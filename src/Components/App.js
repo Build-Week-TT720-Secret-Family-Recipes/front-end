@@ -17,13 +17,13 @@ function App() {
 		<Router>
 			<div>
 				<Switch>
-					<PrivateRoute exact path="/protected" component={Dashboard} />
+					<PrivateRoute exact path="/protected" component={RecipeList} />
 
-					<Route exact path="/">
+					{/* <Route exact path="/">
 
 						<RecipeList />
 
-					</Route>
+					</Route> */}
 					<Route path="/create" component={CreateRecipe} />
 					<Route path="/login" component={Login} />
 					<Route path="/register" component={Register} />

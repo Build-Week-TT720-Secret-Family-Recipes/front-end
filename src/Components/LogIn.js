@@ -13,6 +13,7 @@ import TextField from "@material-ui/core/TextField";
 
 //CRUD
 import axios from "axios";
+import { axiosWithAuth } from "../API/AxiosWithAuth";
 
 function Login() {
 	//STYLING
@@ -25,8 +26,8 @@ function Login() {
 	//HANDLERS
 
 	const formSubmit = (data) => {
-		axios
-			.post("https://tt720-secret-family-recipes.herokuapp.com/login", data)
+		axiosWithAuth()
+			.post("/login", data)
 			.then((res) => {
 				console.log("login response:", data);
 				localStorage.setItem("token", res.data.token);
@@ -87,7 +88,7 @@ function Login() {
 								className={classes.signUpButtonOnLogInPage}
 								variant="contained"
 								color="secondary"
-								// onClick={history.push("/signup")}
+								onClick={() => push("/register")}
 							>
 								Sign Up
 							</Button>

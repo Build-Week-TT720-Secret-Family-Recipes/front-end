@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
 import Login from './LogIn';
+import RecipeCard from "./RecipeCard/RecipeCard";
 
 function RecipeList(props) {
 
@@ -14,7 +15,9 @@ function RecipeList(props) {
         console.log("searchValue: ", searchValue);
     }
 
-    // const { push } = useHistory();
+
+    // const recipes
+    // const filteredRecipes = recipes.filter(recipe => recipe.title.toLowerCase().includes(searchValue.toLowerCase()));
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -58,11 +61,7 @@ function RecipeList(props) {
         
 <div className="ui container" style={{backgroundColor: "#fcbad3", marginTop: "60px", padding: "20px"}}>
 <div className="ui three stackable cards">
-  <div className="card" style={{backgroundColor: "#ffffd2"}}>
-    <div className="content">
-    <h4 className="ui sub header">Recipe</h4>
-    </div>
-  </div>
+ <RecipeCard />
   <div className="card" style={{backgroundColor: "#ffffd2"}}>
     <div className="content">
     <h4 className="ui sub header">Recipe</h4>

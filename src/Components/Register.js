@@ -92,7 +92,7 @@ function Register(props) {
                 className={classes.signUpButtonOnLogInPage}
                 variant="contained"
                 color="secondary"
-                // onClick={history.push("/signup")}
+                onClick={() => push("/login")}
               >
                 Login
               </Button>
