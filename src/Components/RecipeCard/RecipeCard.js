@@ -12,7 +12,7 @@ import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import { axiosWithAuth } from "../../API/AxiosWithAuth";
+
 import EditRecipeDialog from './dialogs/EditRecipeDialog'
 import DeleteRecipeDialog from "./dialogs/deleteRecipeDialog";
 
@@ -50,33 +50,17 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-function RecipeCard({
-	recipeOrigin,
-
-	categoryId,
-	userId,
-
-	ingredients,
-
-	recipeName,
-	steps,
-	recipeImage,
-}) {
+function RecipeCard(props) {
 	const classes = useStyles();
 	const [expanded, setExpanded] = useState(false);
-	const [recipes, setRecipes] = useState([]);
+	//const [recipes, setRecipes] = useState([]);
 	const [editRecipe, setEditRecipe] = useState(false)
 
     //API CALL
-	useEffect(() => {
-		axiosWithAuth()
-			.get("/recipes")
-			.then((res) => console.log(res))
-			.catch((err) => console.log(err.response));
-    }, []);
-
+	
+console.log(props.recipes);
     
-	console.log(recipes);
+
 	const handleExpandClick = () => {
 		setExpanded(!expanded);
 	};
@@ -86,25 +70,25 @@ function RecipeCard({
 			<CardHeader
 				avatar={
 					<Avatar aria-label="recipe" className={classes.avatar}>
-						DESSERT
+						{props.category}
 					</Avatar>
 				}
-				title={recipeName}
+				title={props.title}
 				//subheader="September 14, 2016"
 			/>
 			<CardMedia
 				className={classes.media}
-				image={recipeImage}
+				image={props.image}
 				title="Image of Recipe"
 			/>
 			<CardContent>
 				<Typography variant="body2" color="textSecondary" component="p">
-					{recipeOrigin}
+					{props.source}
 				</Typography>
 			</CardContent>
 			<CardActions disableSpacing>
-				<DeleteRecipeDialog setRecipes={setRecipes} />
-				<EditRecipeDialog setRecipes={setRecipes} />
+				{/* <DeleteRecipeDialog setRecipes={setRecipes} />
+				<EditRecipeDialog setRecipes={setRecipes} /> */}
 
 				<IconButton
 					className={clsx(classes.expand, {
@@ -123,13 +107,13 @@ function RecipeCard({
 						Ingredients:
 					</Typography>
 					<Typography paragraph className={classes.content}>
-						{ingredients}
+						{/* {props.recipe.ingredients} */}
 					</Typography>
 					<Typography paragraph className={classes.title}>
 						Steps
 					</Typography>
 					<Typography paragraph className={classes.content}>
-						{steps}
+						{/* {props.recipe.steps} */}
 					</Typography>
 				</CardContent>
 			</Collapse>
