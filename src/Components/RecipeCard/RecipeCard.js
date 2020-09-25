@@ -58,7 +58,7 @@ function RecipeCard(props) {
 
     //API CALL
 	
-console.log(props.recipes);
+// console.log(props.recipes);
     
 
 	const handleExpandClick = () => {
@@ -87,8 +87,8 @@ console.log(props.recipes);
 				</Typography>
 			</CardContent>
 			<CardActions disableSpacing>
-				{/* <DeleteRecipeDialog setRecipes={setRecipes} />
-				<EditRecipeDialog setRecipes={setRecipes} /> */}
+				<DeleteRecipeDialog id={props.id} />
+				<EditRecipeDialog  />
 
 				<IconButton
 					className={clsx(classes.expand, {
