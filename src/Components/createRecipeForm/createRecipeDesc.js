@@ -41,7 +41,7 @@ function CreateRecipeDesc(props) {
 	});
 
 	const onSubmit = (data) => {
-		console.log(data)
+	
 		return props.addToStateDescribe(data), props.display();
 	};
 

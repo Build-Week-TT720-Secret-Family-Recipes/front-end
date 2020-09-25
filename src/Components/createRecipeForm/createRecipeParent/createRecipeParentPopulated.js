@@ -32,7 +32,6 @@ const CreateRecipeParentWithDesc = ({
 			categoryId: categoryId,
 			userId: userId,
 		};
-		console.log(recipeObject);
 		axiosWithAuth()
 			.post(`/recipes`, recipeObject)
 			.then((res) => {

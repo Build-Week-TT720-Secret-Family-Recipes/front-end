@@ -29,7 +29,7 @@ function Login() {
 		axiosWithAuth()
 			.post("/login", data)
 			.then((res) => {
-				console.log("login response:", data);
+				// console.log("login response:", data);
 				localStorage.setItem("token", res.data.token);
 				push("/protected");
 			})

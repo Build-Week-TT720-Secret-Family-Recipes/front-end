@@ -40,7 +40,7 @@ function CreateRecipeInstructions(props) {
 	});
 
 	const onSubmit = (data) => {
-		console.log(data);
+		
 		return props.addToStateSteps(data), props.display();
 	};
 

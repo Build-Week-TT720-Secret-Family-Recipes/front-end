@@ -39,7 +39,7 @@ function CreateRecipeIngredients(props) {
 	});
 
 	const onSubmit = (data) => {
-		console.log(data);
+	
 		return props.addToStateIngredients(data), props.display();
 	};
 

@@ -6,7 +6,7 @@ import { axiosWithAuth } from "../API/AxiosWithAuth";
 
 function RecipeList(props) {
 const [recipes, setRecipes] = useState([]);
-
+console.log(recipes)
 //API CALL
 
 useEffect(() => {
@@ -19,7 +19,7 @@ useEffect(() => {
 }, []);
 
 
-console.log("recipes from recipeList state", recipes);
+// console.log("recipes from recipeList state", recipes);
     //search functionality
     
     const [ searchValue, setSearchValue ] = useState([]);
@@ -99,7 +99,10 @@ console.log("recipes from recipeList state", recipes);
 											category={recipe.category_name}
 											source={recipe.source}
 											image={recipe.imgUrl}
-											id={recipe.recipe_id}
+                      id={recipe.recipe_id}
+                      recipe={recipe}
+                      ingredients={recipe.ingredients}
+                      instructions={recipe.instruction}
 										/>
 									)
 								)
