@@ -10,6 +10,8 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import {axiosWithAuth} from '../../../API/AxiosWithAuth'
 
 function DeleteRecipeDialog(props) {
+
+	console.log("delete props: ", props);
 	const [open, setOpen] = useState(false);
 
 	const handleClickOpen = () => {
