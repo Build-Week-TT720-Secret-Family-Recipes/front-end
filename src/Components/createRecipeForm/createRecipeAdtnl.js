@@ -80,4 +80,7 @@ const mapDispatchToProps = {
 	addToStateAdditionalInstructions,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreateRecipeAdtnl);
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(CreateRecipeAdtnl);

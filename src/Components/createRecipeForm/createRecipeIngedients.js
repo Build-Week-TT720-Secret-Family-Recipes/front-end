@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 //REDUX
 import { connect } from "react-redux";
 import { addToStateIngredients } from "../../redux/actions";
+
 //STYLING
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";

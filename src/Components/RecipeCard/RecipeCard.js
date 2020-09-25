@@ -13,7 +13,7 @@ import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
-import EditRecipeDialog from './dialogs/EditRecipeDialog'
+import EditRecipeDialog from "./dialogs/EditRecipeDialog";
 import DeleteRecipeDialog from "./dialogs/deleteRecipeDialog";
 
 const useStyles = makeStyles((theme) => ({
@@ -38,28 +38,23 @@ const useStyles = makeStyles((theme) => ({
 	avatar: {
 		width: "11vw",
 		backgroundColor: "#8EDDFD",
-    },
-    title: {
-        fontStyle: "italic",
-        fontSize: "5vw",
-    },
-    content: {
-        font: "",
-},
+	},
+	title: {
+		fontStyle: "italic",
+		fontSize: "5vw",
+	},
+	content: {
+		font: "",
+	},
 }));
-
-
 
 function RecipeCard(props) {
 	const classes = useStyles();
 	const [expanded, setExpanded] = useState(false);
 	//const [recipes, setRecipes] = useState([]);
-	const [editRecipe, setEditRecipe] = useState(false)
+	const [editRecipe, setEditRecipe] = useState(false);
 
-    //API CALL
-	
-console.log(props.recipes);
-    
+	//API CALL
 
 	const handleExpandClick = () => {
 		setExpanded(!expanded);
@@ -87,8 +82,16 @@ console.log(props.recipes);
 				</Typography>
 			</CardContent>
 			<CardActions disableSpacing>
-				{/* <DeleteRecipeDialog setRecipes={setRecipes} />
-				<EditRecipeDialog setRecipes={setRecipes} /> */}
+				<DeleteRecipeDialog />
+				<EditRecipeDialog
+					title={props.title}
+					image={props.image}
+					source={props.source}
+					recipe={props.recipe}
+					id={props.id}
+					instructions={props.instruction}
+					ingredients={props.ingredients}
+				/>
 
 				<IconButton
 					className={clsx(classes.expand, {
@@ -107,13 +110,14 @@ console.log(props.recipes);
 						Ingredients:
 					</Typography>
 					<Typography paragraph className={classes.content}>
-						{/* {props.recipe.ingredients} */}
+						{props.ingredients}
 					</Typography>
 					<Typography paragraph className={classes.title}>
 						Steps
 					</Typography>
 					<Typography paragraph className={classes.content}>
-						{/* {props.recipe.steps} */}
+						{/* instructions .split {" "} */}
+						{props.instruction}
 					</Typography>
 				</CardContent>
 			</Collapse>

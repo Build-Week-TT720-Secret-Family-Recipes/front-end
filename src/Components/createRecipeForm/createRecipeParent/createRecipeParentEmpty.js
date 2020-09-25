@@ -196,7 +196,9 @@ function CreateRecipe({
 				}
 			>
 				<Grid item className={classes.accessCatagorySpecificFormAdtnlInstr}>
-					<Typography className={classes.ul}>ADD A PHOTO</Typography>
+					<Typography className={classes.ul}>
+						ADD A PHOTO
+					</Typography>
 				</Grid>
 			</Paper>
 		</Grid>
@@ -241,8 +243,8 @@ function CreateRecipe({
 			}
 		/>
 	) : (
-		<div>ERROR</div>
-	);
+							<div>ERROR</div>
+						);
 }
 const mapStateToProps = (state) => {
 	return state;

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
@@ -13,10 +13,13 @@ import FormGroup from "@material-ui/core/FormGroup";
 import Grid from "@material-ui/core/Grid";
 import { useStyles } from "../../../Styles/Styles";
 import { putRequest } from "../../../redux/actions";
+import { useParams, useHistory } from "react-router-dom";
+import { axiosWithAuth } from "../../../API/AxiosWithAuth";
 
 function EditRecipeDialog(props) {
 	const [open, setOpen] = useState(false);
-		const { register, handleSubmit } = useForm();
+	const { register, handleSubmit } = useForm();
+	const [update, setUpdate] = useState(props.recipe);
 	const classes = useStyles();
 	const handleClickOpen = () => {
 		setOpen(true);
@@ -25,11 +28,22 @@ function EditRecipeDialog(props) {
 	const handleClose = () => {
 		setOpen(false);
 	};
-const onSubmit = (data) => {
-	console.log(data);
-	putRequest(data);
-};
-	
+	const onSubmit = (e) => {
+		axiosWithAuth()
+			.put(`/recipes/${props.id}`, update)
+			.then((res) => {
+				console.log(update);
+				setUpdate(res.data);
+				console.log(update);
+				handleClose();
+			})
+			.catch((err) => console.log("error: ", err));
+	};
+
+	const changeHandler = (e) => {
+		setUpdate({ ...update, [e.target.name]: e.target.value });
+		console.log(update);
+	};
 
 	return (
 		<div>
@@ -49,9 +63,10 @@ const onSubmit = (data) => {
 							Recipe Name
 						</Typography>
 						<TextField
-							placeholder="Whats the name of this dish?"
+							onChange={changeHandler}
+							placeholder={props.title}
 							type="text"
-							name="name"
+							name="title"
 							className={classes.dialogFormInput}
 							inputRef={register}
 						/>
@@ -64,7 +79,7 @@ const onSubmit = (data) => {
 								<input
 									type="checkbox"
 									value="breakfast"
-									name="category"
+									name="category_name"
 									ref={register}
 								/>
 								Breakfast
@@ -73,7 +88,7 @@ const onSubmit = (data) => {
 								<input
 									type="checkbox"
 									value="lunch"
-									name="category"
+									name="category_name"
 									ref={register}
 								/>
 								Lunch
@@ -82,7 +97,7 @@ const onSubmit = (data) => {
 								<input
 									type="checkbox"
 									value="Dinner"
-									name="category"
+									name="category_name"
 									ref={register}
 								/>
 								Dinner
@@ -91,7 +106,7 @@ const onSubmit = (data) => {
 								<input
 									type="checkbox"
 									value="Dessert"
-									name="category"
+									name="category_name"
 									ref={register}
 								/>
 								Dessert
@@ -100,7 +115,7 @@ const onSubmit = (data) => {
 								<input
 									type="checkbox"
 									value="Snacks"
-									name="category"
+									name="category_name"
 									ref={register}
 								/>
 								Snacks
@@ -109,7 +124,7 @@ const onSubmit = (data) => {
 								<input
 									type="checkbox"
 									value="Drinks"
-									name="category"
+									name="category_name"
 									ref={register}
 								/>
 								Drinks
@@ -118,7 +133,7 @@ const onSubmit = (data) => {
 								<input
 									type="checkbox"
 									value="Appetizers"
-									name="category"
+									name="category_name"
 									ref={register}
 								/>
 								Appetizers
@@ -127,7 +142,7 @@ const onSubmit = (data) => {
 								<input
 									type="checkbox"
 									value="Whenever"
-									name="category"
+									name="category_name"
 									ref={register}
 								/>
 								Whenever
@@ -137,9 +152,36 @@ const onSubmit = (data) => {
 							Recipe Origin
 						</Typography>
 						<TextField
-							placeholder="Where did you get this recipe from?"
+							onChange={changeHandler}
+							placeholder={props.source}
 							type="text"
-							name="where"
+							name="source"
+							className={classes.dialogFormInput}
+							inputRef={register}
+						/>
+						<Typography className={classes.dialogHeader}>
+							Recipe Ingredients
+						</Typography>
+						<br></br>
+						<br></br>
+						<TextField
+							onChange={changeHandler}
+							placeholder={props.ingredients}
+							type="text"
+							name="ingredients"
+							className={classes.dialogFormInput}
+							inputRef={register}
+						/>
+						<Typography className={classes.dialogHeader}>
+							Recipe Instructions
+						</Typography>
+						<br></br>
+
+						<TextField
+							onChange={changeHandler}
+							placeholder={props.instructions}
+							type="text"
+							name="steps"
 							className={classes.dialogFormInput}
 							inputRef={register}
 						/>

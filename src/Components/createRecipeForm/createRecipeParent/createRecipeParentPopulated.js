@@ -4,7 +4,7 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import { useStyles } from "../../../Styles/Styles";
 import Button from "@material-ui/core/Button";
-import { axiosWithAuth } from "../../../API/AxiosWithAuth";
+import { axiosWithAuth } from '../../../API/AxiosWithAuth'
 import { useHistory } from "react-router-dom";
 
 const CreateRecipeParentWithDesc = ({
@@ -27,7 +27,7 @@ const CreateRecipeParentWithDesc = ({
 			title: recipeName,
 			source: recipeOrigin,
 			imgUrl: recipeImage,
-			ingredients: "[{id,quantity,recipe_id,}]",
+			ingredients: '[{id,quantity,recipe_id,}]',
 			instructions: steps,
 			categoryId: categoryId,
 			userId: userId,
@@ -39,7 +39,7 @@ const CreateRecipeParentWithDesc = ({
 				push("/dashboard");
 			})
 			.catch((err) => {
-				console.log("error: ", err);
+				console.log("error: ", err)
 				push("/dashboard");
 			});
 	};
@@ -88,8 +88,8 @@ const CreateRecipeParentWithDesc = ({
 						ingredientsPopulated
 							? classes.addRecipe
 							: stepsPopulated
-							? classes.classes.addRecipe
-							: classes.hideEl
+								? classes.classes.addRecipe
+								: classes.hideEl
 					}
 				>
 					<Button
@@ -103,10 +103,10 @@ const CreateRecipeParentWithDesc = ({
 			</Grid>
 		</Grid>
 	) : (
-		<Grid item className={classes.tempHeader}>
-			Add a recipe
-		</Grid>
-	);
+			<Grid item className={classes.tempHeader}>
+				Add a recipe
+			</Grid>
+		);
 };
 
 const mapStateToProps = (state) => {
