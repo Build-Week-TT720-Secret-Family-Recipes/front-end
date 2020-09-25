@@ -32,14 +32,14 @@ function EditRecipeDialog(props) {
 		axiosWithAuth()
 			.put(`/recipes/${props.id}`, update)
 			.then((res) => {
-				console.log(update)
+				console.log(update);
 				setUpdate(res.data);
 				console.log(update);
-				handleClose()
+				handleClose();
 			})
 			.catch((err) => console.log("error: ", err));
 	};
-	
+
 	const changeHandler = (e) => {
 		setUpdate({ ...update, [e.target.name]: e.target.value });
 		console.log(update);

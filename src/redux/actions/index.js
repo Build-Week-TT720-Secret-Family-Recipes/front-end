@@ -4,15 +4,27 @@ export const ADD_TO_STATE_INGREDIENTS = "ADD_TO_STATE_INGREDIENTS";
 export const ADD_TO_STATE_STEPS = "ADD_TO_STATE_STEPS";
 export const ADD_TO_STATE_ADDITIONAL_INSTRUCTIONS =
 	"ADD_TO_STATE_ADDITIONAL_INSTRUCTIONS";
-export const DISPLAY_FORM_ELEMENTS = "DISPLAY_FORM_ELEMENTS";
+export const DISPLAY_FORM_ELEMENTS_DESCIBE = "DISPLAY_FORM_ELEMENTS_DESCIBE";
+export const DISPLAY_FORM_ELEMENTS_INGREDIENTS = "DISPLAY_FORM_ELEMENTS_INGREDIENTS";
+export const DISPLAY_FORM_ELEMENTS_STEPS = "DISPLAY_FORM_ELEMENTS_STEPS";
 export const DELETE_RECIPE = "DELETE_RECIPE"
 export const EDIT_RECIPE = "EDIT_RECIPE";
 export const FETCH_DATA_REQUEST = "FETCH_DATA_REQUEST"
 
 
-export const displayFormElements = (data) => {
+export const displayFormElementsDescribe = (data) => {
 	return {
-		type: DISPLAY_FORM_ELEMENTS,
+		type: DISPLAY_FORM_ELEMENTS_DESCIBE,
+	};
+};
+export const displayFormElementsIngredients = (data) => {
+	return {
+		type: DISPLAY_FORM_ELEMENTS_INGREDIENTS,
+	};
+};
+export const displayFormElementsSteps = (data) => {
+	return {
+		type: DISPLAY_FORM_ELEMENTS_STEPS,
 	};
 };
 

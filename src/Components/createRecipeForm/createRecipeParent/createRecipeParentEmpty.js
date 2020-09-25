@@ -3,6 +3,9 @@ import React, { useState, useEffect } from "react";
 
 import { connect } from "react-redux";
 
+//ACTION IMPORTS
+import { addToStateDescribe } from "../../../redux/actions";
+import { displayFormElementsDescribe } from "../../../redux/actions";
 //COMPONENT IMPORTS
 import CreateRecipeDesc from "../createRecipeDesc";
 import CreateRecipeIngredients from "../createRecipeIngedients";
@@ -19,11 +22,20 @@ import { gsap } from "gsap";
 //import axios from "axios";
 
 function CreateRecipe({
-	stepsPopulated,
-	describePopulated,
-	ingredientsPopulated,
-	recipeImagePopulated,
+	displayFormElementsDescribe,
+	display: {
+		stepsPopulated,
+		describePopulated,
+		ingredientsPopulated,
+		recipeImagePopulated,
+		createDisplay,
+		descDisplay,
+		ingDisplay,
+		stepsDisplay,
+		addDisplay,
+	},
 }) {
+	console.log(describePopulated);
 	//STATE
 	const [temporaryState, setTemporaryState] = useState({
 		createDisplay: true,
@@ -112,7 +124,12 @@ function CreateRecipe({
 			}
 		);
 	});
-	return temporaryState.createDisplay ? (
+
+	const test = () => {
+		console.log("works")
+		displayFormElementsDescribe()
+	}
+	return createDisplay ? (
 		<Grid container className={classes.createRecipeContainer}>
 			<Grid container className={classes.recipe}>
 				<Grid item>
@@ -127,12 +144,9 @@ function CreateRecipe({
 						? classes.hideEl
 						: classes.accessCatagorySpecificFormContainer
 				}
+			
 				onClick={() =>
-					setTemporaryState({
-						...temporaryState,
-						createDisplay: false,
-						descDisplay: true,
-					})
+					test()
 				}
 			>
 				<Grid item className={classes.accessCatagorySpecificFormDescribe}>
@@ -200,16 +214,8 @@ function CreateRecipe({
 				</Grid>
 			</Paper>
 		</Grid>
-	) : temporaryState.descDisplay ? (
-		<CreateRecipeDesc
-			display={() =>
-				setTemporaryState({
-					...temporaryState,
-					createDisplay: true,
-					descDisplay: false,
-				})
-			}
-		/>
+	) : descDisplay ? (
+		<CreateRecipeDesc />
 	) : temporaryState.ingDisplay ? (
 		<CreateRecipeIngredients
 			display={() =>
@@ -248,6 +254,9 @@ const mapStateToProps = (state) => {
 	return state;
 };
 
-const mapDispatchToProps = {};
+const mapDispatchToProps = {
+	addToStateDescribe,
+	displayFormElementsDescribe
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateRecipe);

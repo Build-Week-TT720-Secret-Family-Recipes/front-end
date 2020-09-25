@@ -7,19 +7,33 @@ import Button from "@material-ui/core/Button";
 import { axiosWithAuth } from "../../../API/AxiosWithAuth";
 import { useHistory } from "react-router-dom";
 
-const CreateRecipeParentWithDesc = ({
-	recipe,
-	recipeOrigin,
-	describePopulated,
-	categoryId,
-	userId,
-	stepsPopulated,
-	ingredients,
-	ingredientsPopulated,
-	recipeName,
-	steps,
-	recipeImage,
-}) => {
+function CreateRecipeParentWithDesc ({
+	display: {
+		stepsPopulated,
+		describePopulated,
+		ingredientsPopulated,
+		recipeImagePopulated,
+		createDisplay,
+		descDisplay,
+		ingDisplay,
+		stepsDisplay,
+		recipe,
+		addDisplay,
+		
+	},
+	recipes: [
+		{
+			categoryId,
+			userId,
+			recipeOrigin,
+			ingredients,
+
+			recipeName,
+			steps,
+			recipeImage,
+		},
+	],
+}) {
 	const classes = useStyles();
 	const { push } = useHistory();
 	const sendRecipeObject = () => {
@@ -87,7 +101,7 @@ const CreateRecipeParentWithDesc = ({
 						ingredientsPopulated
 							? classes.addRecipe
 							: stepsPopulated
-							? classes.classes.addRecipe
+							? classes.addRecipe
 							: classes.hideEl
 					}
 				>
