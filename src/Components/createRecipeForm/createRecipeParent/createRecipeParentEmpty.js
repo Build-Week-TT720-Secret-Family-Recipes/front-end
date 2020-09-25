@@ -3,9 +3,6 @@ import React, { useState, useEffect } from "react";
 
 import { connect } from "react-redux";
 
-//ACTION IMPORTS
-import { addToStateDescribe } from "../../../redux/actions";
-import { displayFormElementsDescribe } from "../../../redux/actions";
 //COMPONENT IMPORTS
 import CreateRecipeDesc from "../createRecipeDesc";
 import CreateRecipeIngredients from "../createRecipeIngedients";
@@ -22,20 +19,11 @@ import { gsap } from "gsap";
 //import axios from "axios";
 
 function CreateRecipe({
-	displayFormElementsDescribe,
-	display: {
-		stepsPopulated,
-		describePopulated,
-		ingredientsPopulated,
-		recipeImagePopulated,
-		createDisplay,
-		descDisplay,
-		ingDisplay,
-		stepsDisplay,
-		addDisplay,
-	},
+	stepsPopulated,
+	describePopulated,
+	ingredientsPopulated,
+	recipeImagePopulated,
 }) {
-	console.log(describePopulated);
 	//STATE
 	const [temporaryState, setTemporaryState] = useState({
 		createDisplay: true,
@@ -124,12 +112,7 @@ function CreateRecipe({
 			}
 		);
 	});
-
-	const test = () => {
-		console.log("works")
-		displayFormElementsDescribe()
-	}
-	return createDisplay ? (
+	return temporaryState.createDisplay ? (
 		<Grid container className={classes.createRecipeContainer}>
 			<Grid container className={classes.recipe}>
 				<Grid item>
@@ -144,9 +127,12 @@ function CreateRecipe({
 						? classes.hideEl
 						: classes.accessCatagorySpecificFormContainer
 				}
-			
 				onClick={() =>
-					test()
+					setTemporaryState({
+						...temporaryState,
+						createDisplay: false,
+						descDisplay: true,
+					})
 				}
 			>
 				<Grid item className={classes.accessCatagorySpecificFormDescribe}>
@@ -210,12 +196,22 @@ function CreateRecipe({
 				}
 			>
 				<Grid item className={classes.accessCatagorySpecificFormAdtnlInstr}>
-					<Typography className={classes.ul}>ADD A PHOTO</Typography>
+					<Typography className={classes.ul}>
+						ADD A PHOTO
+					</Typography>
 				</Grid>
 			</Paper>
 		</Grid>
-	) : descDisplay ? (
-		<CreateRecipeDesc />
+	) : temporaryState.descDisplay ? (
+		<CreateRecipeDesc
+			display={() =>
+				setTemporaryState({
+					...temporaryState,
+					createDisplay: true,
+					descDisplay: false,
+				})
+			}
+		/>
 	) : temporaryState.ingDisplay ? (
 		<CreateRecipeIngredients
 			display={() =>
@@ -247,16 +243,13 @@ function CreateRecipe({
 			}
 		/>
 	) : (
-		<div>ERROR</div>
-	);
+							<div>ERROR</div>
+						);
 }
 const mapStateToProps = (state) => {
 	return state;
 };
 
-const mapDispatchToProps = {
-	addToStateDescribe,
-	displayFormElementsDescribe
-};
+const mapDispatchToProps = {};
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateRecipe);

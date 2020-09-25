@@ -40,7 +40,7 @@ function CreateRecipeAdtnl(props) {
 	});
 
 	const onSubmit = (data) => {
-		
+		console.log(data);
 		return props.addToStateAdditionalInstructions(data), props.display();
 	};
 
@@ -80,4 +80,7 @@ const mapDispatchToProps = {
 	addToStateAdditionalInstructions,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreateRecipeAdtnl);
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(CreateRecipeAdtnl);

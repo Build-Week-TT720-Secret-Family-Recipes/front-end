@@ -4,36 +4,22 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import { useStyles } from "../../../Styles/Styles";
 import Button from "@material-ui/core/Button";
-import { axiosWithAuth } from "../../../API/AxiosWithAuth";
+import { axiosWithAuth } from '../../../API/AxiosWithAuth'
 import { useHistory } from "react-router-dom";
 
-function CreateRecipeParentWithDesc ({
-	display: {
-		stepsPopulated,
-		describePopulated,
-		ingredientsPopulated,
-		recipeImagePopulated,
-		createDisplay,
-		descDisplay,
-		ingDisplay,
-		stepsDisplay,
-		recipe,
-		addDisplay,
-		
-	},
-	recipes: [
-		{
-			categoryId,
-			userId,
-			recipeOrigin,
-			ingredients,
-
-			recipeName,
-			steps,
-			recipeImage,
-		},
-	],
-}) {
+const CreateRecipeParentWithDesc = ({
+	recipe,
+	recipeOrigin,
+	describePopulated,
+	categoryId,
+	userId,
+	stepsPopulated,
+	ingredients,
+	ingredientsPopulated,
+	recipeName,
+	steps,
+	recipeImage,
+}) => {
 	const classes = useStyles();
 	const { push } = useHistory();
 	const sendRecipeObject = () => {
@@ -41,18 +27,19 @@ function CreateRecipeParentWithDesc ({
 			title: recipeName,
 			source: recipeOrigin,
 			imgUrl: recipeImage,
-			ingredients: "[{id,quantity,recipe_id,}]",
+			ingredients: '[{id,quantity,recipe_id,}]',
 			instructions: steps,
 			categoryId: categoryId,
 			userId: userId,
 		};
+		console.log(recipeObject);
 		axiosWithAuth()
 			.post(`/recipes`, recipeObject)
 			.then((res) => {
 				push("/dashboard");
 			})
 			.catch((err) => {
-				console.log("error: ", err);
+				console.log("error: ", err)
 				push("/dashboard");
 			});
 	};
@@ -101,8 +88,8 @@ function CreateRecipeParentWithDesc ({
 						ingredientsPopulated
 							? classes.addRecipe
 							: stepsPopulated
-							? classes.addRecipe
-							: classes.hideEl
+								? classes.classes.addRecipe
+								: classes.hideEl
 					}
 				>
 					<Button
@@ -116,10 +103,10 @@ function CreateRecipeParentWithDesc ({
 			</Grid>
 		</Grid>
 	) : (
-		<Grid item className={classes.tempHeader}>
-			Add a recipe
-		</Grid>
-	);
+			<Grid item className={classes.tempHeader}>
+				Add a recipe
+			</Grid>
+		);
 };
 
 const mapStateToProps = (state) => {

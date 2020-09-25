@@ -16,7 +16,7 @@ import { gsap } from "gsap";
 //CRUD
 //import axios from "axios";
 
-function CreateRecipeDesc({ addToStateDescribe}) {
+function CreateRecipeDesc(props) {
 	const { register, handleSubmit } = useForm();
 	const classes = useStyles();
 	const expand = React.createRef();
@@ -41,7 +41,8 @@ function CreateRecipeDesc({ addToStateDescribe}) {
 	});
 
 	const onSubmit = (data) => {
-		addToStateDescribe(data)
+		console.log(data)
+		return props.addToStateDescribe(data), props.display();
 	};
 
 	return (

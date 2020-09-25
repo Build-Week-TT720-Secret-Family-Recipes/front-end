@@ -40,7 +40,7 @@ function CreateRecipeInstructions(props) {
 	});
 
 	const onSubmit = (data) => {
-		
+		console.log(data);
 		return props.addToStateSteps(data), props.display();
 	};
 
@@ -60,6 +60,7 @@ function CreateRecipeInstructions(props) {
 					inputRef={register}
 				/>
 
+
 				<Grid item className={classes.descSubmit}>
 					<Button
 						variant="contained"
@@ -68,7 +69,7 @@ function CreateRecipeInstructions(props) {
 						className={classes.descSubmit}
 					>
 						ADD RECIPE INSTRUCTIONS
-					</Button>
+						</Button>
 				</Grid>
 			</Grid>
 		</Grid>
@@ -79,10 +80,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = {
-	addToStateSteps,
+	addToStateSteps
 };
 
-export default connect(
-	mapStateToProps,
-	mapDispatchToProps
-)(CreateRecipeInstructions);
+export default connect(mapStateToProps, mapDispatchToProps)(CreateRecipeInstructions)
