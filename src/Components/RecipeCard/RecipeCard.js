@@ -51,7 +51,7 @@ function RecipeCard(props) {
 				</Typography>
 			</CardContent>
 			<CardActions disableSpacing>
-				<DeleteRecipeDialog />
+				<DeleteRecipeDialog id={props.id}/>
 				<EditRecipeDialog
 					title={props.title}
 					image={props.image}
