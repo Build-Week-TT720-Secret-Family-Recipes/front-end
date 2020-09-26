@@ -72,6 +72,65 @@ function RecipeList(props) {
 							<button className="ui button" onClick={onSubmit}>
 								Submit
 							</button>
+</div>
+					</div>
+				</div>
+				<div
+					className="ui container"
+					style={{
+						backgroundColor: "#fcbad3",
+						marginTop: "60px",
+						padding: "20px",
+					}}
+				>
+					<div className="ui three stackable cards">
+						<div>
+							{recipes.map(
+								(recipe) => (
+									(
+										<RecipeCard
+											title={recipe.title}
+											category={recipe.category_name}
+											source={recipe.source}
+											image={recipe.imgUrl}
+                      id={recipe.recipe_id}
+                      recipe={recipe}
+                      ingredients={recipe.ingredients}
+                      instructions={recipe.instruction}
+										/>
+									)
+								)
+							)}
+						</div>
+						<div className="card" style={{ backgroundColor: "#ffffd2" }}>
+							<div className="content">
+								<h4 className="ui sub header">Recipe</h4>
+							</div>
+						</div>
+						<div className="card" style={{ backgroundColor: "#ffffd2" }}>
+							<div className="content">
+								<h4 className="ui sub header">Recipe</h4>
+							</div>
+						</div>
+						<div className="card" style={{ backgroundColor: "#ffffd2" }}>
+							<div className="content">
+								<h4 className="ui sub header">Recipe</h4>
+							</div>
+						</div>
+						<div className="card" style={{ backgroundColor: "#ffffd2" }}>
+							<div className="content">
+								<h4 className="ui sub header">Recipe</h4>
+							</div>
+						</div>
+						<div className="card" style={{ backgroundColor: "#ffffd2" }}>
+							<div className="content">
+								<h4 className="ui sub header">Recipe</h4>
+							</div>
+						</div>
+						<div className="card" style={{ backgroundColor: "#ffffd2" }}>
+							<div className="content">
+								<h4 className="ui sub header">Recipe</h4>
+							</div>
 						</div>
 					</div>
 					<a className="item" href="/register">
