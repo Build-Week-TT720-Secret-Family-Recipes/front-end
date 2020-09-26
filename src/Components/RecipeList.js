@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import Login from "./LogIn";
+
+import { useStyles } from "../Styles/Styles";
+import Grid from "@material-ui/core/Grid";
+
 import RecipeCard from "./RecipeCard/RecipeCard";
 import { axiosWithAuth } from "../API/AxiosWithAuth";
 
 function RecipeList(props) {
+
+	);
+
   const [recipes, setRecipes] = useState([]);
   console.log("recipes: ", recipes);
   //API CALL
@@ -92,26 +99,26 @@ function RecipeList(props) {
           padding: "20px",
         }}
       >
-        <div className="ui three stackable cards">
-          <div>
-            {filteredRecipes.map((recipe) => (
-              <RecipeCard
-                title={recipe.title}
-                category={recipe.category_name}
-                source={recipe.source}
-                image={recipe.imgUrl}
-                id={recipe.recipe_id}
-                recipe={recipe}
-                ingredients={recipe.ingredients}
-                instructions={recipe.instruction}
-              />
-            ))}
-          </div>
-         
-        </div>
+ 			<Grid item className={classes.recipeGrid}>
+						{recipes.map((recipe) => (
+							<Grid item className={classes.recipeCard}>
+							<RecipeCard
+								title={recipe.title}
+								category={recipe.category_name}
+								source={recipe.source}
+								image={recipe.imgUrl}
+								id={recipe.recipe_id}
+								recipe={recipe}
+								ingredients={recipe.ingredients}
+								instructions={recipe.instruction}
+							/>
+							</Grid>
+						))}
+					</Grid>
       </div>
     </div>
   );
+
 }
 
 export default RecipeList;

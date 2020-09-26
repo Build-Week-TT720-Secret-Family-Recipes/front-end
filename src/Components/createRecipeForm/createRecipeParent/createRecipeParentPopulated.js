@@ -27,7 +27,7 @@ const CreateRecipeParentWithDesc = ({
 			title: recipeName,
 			source: recipeOrigin,
 			imgUrl: recipeImage,
-			ingredients: '[{id,quantity,recipe_id,}]',
+			ingredients: ingredients,
 			instructions: steps,
 			categoryId: categoryId,
 			userId: userId,

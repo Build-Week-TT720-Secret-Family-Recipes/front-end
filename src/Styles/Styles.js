@@ -305,4 +305,59 @@ export const useStyles = makeStyles((theme) => ({
 		justifyContent: "center",
 		alignItems: "center",
 	},
+	root: {
+		maxWidth: 345,
+		backgroundColor: "#D9F8FE",
+	},
+	media: {
+		height: 0,
+		paddingTop: "56.25%", // 16:9
+	},
+	expand: {
+		transform: "rotate(0deg)",
+		marginLeft: "auto",
+		transition: theme.transitions.create("transform", {
+			duration: theme.transitions.duration.shortest,
+		}),
+	},
+	expandOpen: {
+		transform: "rotate(180deg)",
+	},
+	avatar: {
+		
+		backgroundColor: "red",
+	},
+	title: {
+		fontStyle: "italic",
+		fontSize: "3vw",
+	},
+	content: {
+		font: "",
+	},
+	recipeGridContainer: {
+		display: "flex",
+		
+		justifyContent: "space-around",
+		
+		height: "100vh",
+		//width: "100%",
+
+	},
+	recipeGrid: {
+		display: "flex",
+		justifyItems: "space-around",
+		justifyContent: "space-around",
+		boxSizing: "border-box",
+		height: "100vh",
+		width: "100vw",
+		margin: "20px",
+		border: "2px solid red",
+	},
+	recipeCard: {
+		border: "2px solid green",
+		display: "flex",
+		justifyItems: "space-around",
+		justifyContent: "space-around",
+		height: "40vh",
+	},
 }));

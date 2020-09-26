@@ -12,41 +12,11 @@ import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-
+import {useStyles} from '../../Styles/Styles'
 import EditRecipeDialog from "./dialogs/EditRecipeDialog";
 import DeleteRecipeDialog from "./dialogs/deleteRecipeDialog";
 
-const useStyles = makeStyles((theme) => ({
-	root: {
-		maxWidth: 345,
-		backgroundColor: "#D9F8FE",
-	},
-	media: {
-		height: 0,
-		paddingTop: "56.25%", // 16:9
-	},
-	expand: {
-		transform: "rotate(0deg)",
-		marginLeft: "auto",
-		transition: theme.transitions.create("transform", {
-			duration: theme.transitions.duration.shortest,
-		}),
-	},
-	expandOpen: {
-		transform: "rotate(180deg)",
-	},
-	avatar: {
-		width: "11vw",
-		backgroundColor: "#8EDDFD",
-	},
-	title: {
-		fontStyle: "italic",
-		fontSize: "5vw",
-	},
-	content: {
-		font: "",
-	},
-}));
+
 
 function RecipeCard(props) {
 	const classes = useStyles();
@@ -59,14 +29,13 @@ function RecipeCard(props) {
 	const handleExpandClick = () => {
 		setExpanded(!expanded);
 	};
-
 	return (
 		<Card className={classes.root}>
 			<CardHeader
 				avatar={
-					<Avatar aria-label="recipe" className={classes.avatar}>
+					<Typography>
 						{props.category}
-					</Avatar>
+					</Typography>
 				}
 				title={props.title}
 				//subheader="September 14, 2016"
@@ -78,7 +47,7 @@ function RecipeCard(props) {
 			/>
 			<CardContent>
 				<Typography variant="body2" color="textSecondary" component="p">
-					{props.source}
+				This recipe came from:	{props.source}
 				</Typography>
 			</CardContent>
 			<CardActions disableSpacing>
@@ -113,11 +82,11 @@ function RecipeCard(props) {
 						{props.ingredients}
 					</Typography>
 					<Typography paragraph className={classes.title}>
-						Steps
+						Steps:
 					</Typography>
 					<Typography paragraph className={classes.content}>
 						{/* instructions .split {" "} */}
-						{props.instruction}
+						{props.instructions}
 					</Typography>
 				</CardContent>
 			</Collapse>
