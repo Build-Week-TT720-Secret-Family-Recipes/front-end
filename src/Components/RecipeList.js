@@ -23,8 +23,8 @@ function RecipeList(props) {
   const [searchValue, setSearchValue] = useState([]);
 
   const handleSearchChanges = (e) => {
-    setInputValue(e.target.value);
-    console.log("inputValue: ", inputValue);
+    setSearchValue(e.target.value);
+    console.log("searchValue: ", searchValue);
   };
 
   // const { push } = useHistory();
@@ -33,7 +33,7 @@ function RecipeList(props) {
     e.preventDefault();
     console.log("submitted");
 
-    setSearchValue(inputValue);
+    setSearchValue("");
     console.log("searchValue after submit: ", searchValue);
   };
 
