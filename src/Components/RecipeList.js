@@ -6,6 +6,10 @@ import Grid from "@material-ui/core/Grid";
 import RecipeCard from "./RecipeCard/RecipeCard";
 import { axiosWithAuth } from "../API/AxiosWithAuth";
 function RecipeList(props) {
+	// this ensures page always renders at the top
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 	const classes = useStyles();
 	const [recipes, setRecipes] = useState([]);
 	console.log("recipes: ", recipes);
@@ -16,7 +20,7 @@ function RecipeList(props) {
 			.then((res) => setRecipes(res.data))
 			.catch((err) => console.log(err.response));
 	}, []);
-	// console.log("recipes from recipeList state", recipes);
+
 	//search functionality
 	const [inputValue, setInputValue] = useState("");
 	const [searchValue, setSearchValue] = useState([]);

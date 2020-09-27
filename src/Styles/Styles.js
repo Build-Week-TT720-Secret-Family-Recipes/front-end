@@ -1,6 +1,9 @@
 import { makeStyles } from "@material-ui/core/styles";
 import describe from "./assets/describe.png";
 import ingredients from "./assets/ingredients.png";
+import actualGrammaFish from "./assets/actualGrammaFish.jpg";
+import GrammaBanner from "./assets/GrammaBanner.png";
+import whisk from "./assets/whisk.jpg";
 import stepsImage from "./assets/stepsImage.jpg";
 import createRecipeBackground0 from "./assets/createRecipeBackground0.jpg";
 import addntlInfo from "./assets/addntlInfo.jpeg";
@@ -11,14 +14,28 @@ export const useStyles = makeStyles((theme) => ({
 	},
 	//LOGIN FORM
 	loginFormContainer: {
+		boxSizing: "border-box",
+		position: "absolute",
+		top: "-1px",
+		left: "-1px",
+		bottom: "-1px",
+		opacity: "90%",
+		backgroundImage: `url(${actualGrammaFish})`,
+		backgroundRepeat: "no-repeat",
+		backgroundSize: "cover",
 		display: "flex",
-		flexDirection: "column",
-		justifyContent: "center",
+		flexDirection: "row",
+		justifyContent: "left",
+
 		alignItems: "center",
 		width: "100%",
 		height: "100vh",
 	},
 	loginFormPaper: {
+		marginLeft: "100px",
+		opacity: "0.8",
+		borderRadius: "20px",
+		boxShadow: "5px 10px 18px #888888",
 		display: "flex",
 		flexDirection: "column",
 		justifyContent: "center",
@@ -54,6 +71,37 @@ export const useStyles = makeStyles((theme) => ({
 	},
 	signUpButtonItem: {
 		padding: "25px",
+	},
+	//DASHBOARD
+
+	dashboardContainer: {
+		width: "100vw",
+		height: "100vh",
+		top: "-1px",
+		left: "-1px",
+		bottom: "-1px",
+		opacity: "90%",
+		backgroundImage: `url(${GrammaBanner})`,
+		backgroundSize: "cover",
+	},
+	GranmaBanner: {
+		display: "flex",
+		flexDirection: "column",
+		justifyContent: "flex-end",
+	},
+	buttonsDashboard: {
+
+		height: "15vh",
+		width: "100vw",
+		display: "flex",
+		justifyContent: "space-around",
+	},
+	dashboardRegisterButton: {
+		opacity: "0.8",
+		width: "8%",
+		height: "90%",
+		borderRadius: "200px",
+
 	},
 	//CREATE RECIPE PARENT
 	recipe: {},
@@ -324,7 +372,6 @@ export const useStyles = makeStyles((theme) => ({
 		transform: "rotate(180deg)",
 	},
 	avatar: {
-		
 		backgroundColor: "red",
 	},
 	title: {
@@ -336,28 +383,19 @@ export const useStyles = makeStyles((theme) => ({
 	},
 	recipeGridContainer: {
 		display: "flex",
-		
+
 		justifyContent: "space-around",
-		
+
 		height: "100vh",
 		//width: "100%",
-
 	},
 	recipeGrid: {
-		display: "flex",
-		justifyItems: "space-around",
-		justifyContent: "space-around",
-		boxSizing: "border-box",
 		height: "100vh",
 		width: "100vw",
 		margin: "20px",
 		border: "2px solid red",
 	},
 	recipeCard: {
-		border: "2px solid green",
-		display: "flex",
-		justifyItems: "space-around",
-		justifyContent: "space-around",
-		height: "40vh",
+
 	},
 }));

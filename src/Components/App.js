@@ -4,9 +4,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Login from "./LogIn";
 import Register from "./Register";
-import RecipeList from "./RecipeList";
+import RecipeList2 from "./RecipeList2";
 
-import Dashboard from "./Dashboard";
 import PrivateRoute from "./privateRoute";
 //import Login from "./Login"
 import CreateRecipe from "./createRecipeForm/createRecipeParent/createRecipeParentEmpty";
@@ -17,10 +16,10 @@ function App() {
 		<Router>
 			<div>
 				<Switch>
-					<PrivateRoute exact path="/protected" component={Dashboard} />
+					<PrivateRoute exact path="/protected" component={RecipeList2} />
 
 					<Route exact path="/">
-						<RecipeList />
+						<RecipeList2 />
 					</Route>
 					<Route path="/create" component={CreateRecipe} />
 					<Route path="/login" component={Login} />

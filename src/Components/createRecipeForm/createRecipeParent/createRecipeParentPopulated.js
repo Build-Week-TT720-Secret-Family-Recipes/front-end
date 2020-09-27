@@ -36,11 +36,11 @@ const CreateRecipeParentWithDesc = ({
 		axiosWithAuth()
 			.post(`/recipes`, recipeObject)
 			.then((res) => {
-				push("/dashboard");
+				push("/");
 			})
 			.catch((err) => {
 				console.log("error: ", err)
-				push("/dashboard");
+				push("/");
 			});
 	};
 	return recipe ? (
