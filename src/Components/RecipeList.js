@@ -6,7 +6,7 @@ import { axiosWithAuth } from "../API/AxiosWithAuth";
 
 function RecipeList(props) {
   const [recipes, setRecipes] = useState([]);
-  console.log("recipes: ", recipes);
+//   console.log("recipes: ", recipes);
   //API CALL
 
   useEffect(() => {
@@ -24,18 +24,18 @@ function RecipeList(props) {
 
   const handleSearchChanges = (e) => {
     setSearchValue(e.target.value);
-    console.log("searchValue: ", searchValue);
+    // console.log("searchValue: ", searchValue);
   };
 
   // const { push } = useHistory();
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log("submitted");
+   
 
     setRecipes(filteredRecipes);
     setSearchValue("");
-    console.log("searchValue after submit: ", searchValue);
+    // console.log("searchValue after submit: ", searchValue);
   };
 
   let filteredRecipes = recipes.filter(
