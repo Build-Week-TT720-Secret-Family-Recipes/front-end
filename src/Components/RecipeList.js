@@ -13,7 +13,7 @@ function RecipeList(props) {
 	);
 
   const [recipes, setRecipes] = useState([]);
-  console.log("recipes: ", recipes);
+//   console.log("recipes: ", recipes);
   //API CALL
 
   useEffect(() => {
@@ -30,22 +30,24 @@ function RecipeList(props) {
   const [searchValue, setSearchValue] = useState([]);
 
   const handleSearchChanges = (e) => {
-    setInputValue(e.target.value);
-    console.log("inputValue: ", inputValue);
+    setSearchValue(e.target.value);
+    // console.log("searchValue: ", searchValue);
   };
 
   // const { push } = useHistory();
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log("submitted");
+   
 
-    setSearchValue(inputValue);
-    console.log("searchValue after submit: ", searchValue);
+    setRecipes(filteredRecipes);
+    setSearchValue("");
+    // console.log("searchValue after submit: ", searchValue);
   };
 
   let filteredRecipes = recipes.filter(
       (recipe) => {
+         
           return recipe.title.indexOf(searchValue) !== -1;
       }
   );
@@ -57,7 +59,7 @@ function RecipeList(props) {
     >
       <div className="ui violet inverted menu">
         <div className="header item">Secret Recipes</div>
-        <a className="active item">Home</a>
+        <a className="active item" href="/">All My Recipes</a>
 
         <div className="ui dropdown item">
           Recipes by meal
