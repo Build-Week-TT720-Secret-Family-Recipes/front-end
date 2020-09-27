@@ -33,12 +33,14 @@ function RecipeList(props) {
     e.preventDefault();
     console.log("submitted");
 
+    setRecipes(filteredRecipes);
     setSearchValue("");
     console.log("searchValue after submit: ", searchValue);
   };
 
   let filteredRecipes = recipes.filter(
       (recipe) => {
+         
           return recipe.title.indexOf(searchValue) !== -1;
       }
   );
@@ -50,7 +52,7 @@ function RecipeList(props) {
     >
       <div className="ui violet inverted menu">
         <div className="header item">Secret Recipes</div>
-        <a className="active item">Home</a>
+        <a className="active item" href="/">All My Recipes</a>
 
         <div className="ui dropdown item">
           Recipes by meal
