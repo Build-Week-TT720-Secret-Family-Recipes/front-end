@@ -27,7 +27,7 @@ function Register(props) {
       .post("https://tt720-secret-family-recipes.herokuapp.com/register", data)
       .then((res) => {
         console.log("Register post res: ", res);
-        push("/login");
+        push("/protected");
       })
       .catch((err) => {
         console.log(err);

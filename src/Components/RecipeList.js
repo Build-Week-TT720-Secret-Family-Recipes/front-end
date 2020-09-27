@@ -9,9 +9,7 @@ import RecipeCard from "./RecipeCard/RecipeCard";
 import { axiosWithAuth } from "../API/AxiosWithAuth";
 
 function RecipeList(props) {
-
-	);
-
+const classes = useStyles()
   const [recipes, setRecipes] = useState([]);
 //   console.log("recipes: ", recipes);
   //API CALL

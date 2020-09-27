@@ -2,6 +2,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import describe from "./assets/describe.png";
 import ingredients from "./assets/ingredients.png";
 import stepsImage from "./assets/stepsImage.jpg";
+import loginRegisterBackground from "./assets/loginRegisterBackground.png";
 import createRecipeBackground0 from "./assets/createRecipeBackground0.jpg";
 import addntlInfo from "./assets/addntlInfo.jpeg";
 export const useStyles = makeStyles((theme) => ({
@@ -324,7 +325,6 @@ export const useStyles = makeStyles((theme) => ({
 		transform: "rotate(180deg)",
 	},
 	avatar: {
-		
 		backgroundColor: "red",
 	},
 	title: {
@@ -336,12 +336,11 @@ export const useStyles = makeStyles((theme) => ({
 	},
 	recipeGridContainer: {
 		display: "flex",
-		
+
 		justifyContent: "space-around",
-		
+
 		height: "100vh",
 		//width: "100%",
-
 	},
 	recipeGrid: {
 		display: "flex",
@@ -359,5 +358,65 @@ export const useStyles = makeStyles((theme) => ({
 		justifyItems: "space-around",
 		justifyContent: "space-around",
 		height: "40vh",
+	},
+	RecipeListHeader: {
+		width: "100vw",
+	},
+	RecipeListMainContainer: {
+		boxSizing: "border-box",
+		backgroundImage: `url(${createRecipeBackground0})`,
+		backgroundRepeat: "no-repeat",
+		backgroundSize: "cover",
+	},
+	RecipeListMainItem: {
+		width: "100vw",
+		display: "inline-block",
+	},
+	RecipeListMainGrid: {
+		boxSizing: "border-box",
+		display: "flex",
+		flexWrap: "wrap",
+	},
+	RecipeListRecipeCard: {
+		border: "5px solid brown",
+		width: "20vw",
+		margin: "20px",
+	},
+	LoginRegisterContainer: {
+		boxSizing: "border-box",
+		position: "absolute",
+		top: "-1px",
+		left: "-1px",
+		bottom: "-1px",
+		backgroundImage: `url(${loginRegisterBackground})`,
+		backgroundRepeat: "no-repeat",
+		backgroundSize: "cover",
+		display: "flex",
+		flexDirection: "row",
+		justifyContent: "space-between",
+		alignItems: "center",
+		width: "100vw",
+		height: "100vh",
+	},
+	formBox: {
+		borderRadius: "100px",
+		opacity: "0.8",
+		width: "30vw",
+		height: "70vh",
+		display: "flex",
+		flexWrap: "wrap",
+	},
+	RecipeListRecipeCardAdd: {
+		border: "5px solid brown",
+		width: "20vw",
+		margin: "20px",
+		backgroundImage: `url(${stepsImage})`,
+		backgroundRepeat: "no-repeat",
+		backgroundSize: "cover",
+		display: "flex",
+		flexDirection: "column",
+		justifyContent: "center",
+		alignItems: "center",
+		textAlign: "center",
 	},
 }));
