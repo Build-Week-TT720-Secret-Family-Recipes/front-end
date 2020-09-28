@@ -13,7 +13,7 @@ import TextField from "@material-ui/core/TextField";
 
 //CRUD
 import axios from "axios";
-import { axiosWithAuth } from "../API/AxiosWithAuth";
+import { axiosWithAuthLogin } from "../API/AxiosWithAuthLogin";
 
 function Login() {
 	//STYLING
@@ -26,7 +26,7 @@ function Login() {
 	//HANDLERS
 
 	const formSubmit = (data) => {
-		axiosWithAuth()
+		axiosWithAuthLogin()
 			.post("/login", data)
 			.then((res) => {
 				// console.log("login response:", data);

@@ -24,9 +24,9 @@ function DeleteRecipeDialog(props) {
     
     const deleteRecipe = () => {
         axiosWithAuth()
-					.delete(`recipes/:id`)
+					.delete(`recipes/${props.id}`)
 					.then((res) => {
-						props.setRecipes(res.data);
+						setOpen(false);
 					});
     }
 
