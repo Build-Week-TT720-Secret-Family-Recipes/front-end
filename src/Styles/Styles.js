@@ -367,6 +367,8 @@ export const useStyles = makeStyles((theme) => ({
 		backgroundImage: `url(${createRecipeBackground0})`,
 		backgroundRepeat: "no-repeat",
 		backgroundSize: "cover",
+		width: "100vw",
+		height: "100vh",
 	},
 	RecipeListMainItem: {
 		width: "100vw",
